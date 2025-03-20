@@ -102,13 +102,13 @@
     console.log(all_stimuli_lists)
 
     //INPUT from participants 
-    var idnum = parseInt(jsPsych.data.getURLVariable('idnum'))
+    /*var idnum = parseInt(jsPsych.data.getURLVariable('idnum'))
     var pool = jsPsych.data.getURLVariable('poolIs')
-    var subpool = jsPsych.data.getURLVariable('subpoolIs')
+    var subpool = jsPsych.data.getURLVariable('subpoolIs')*/
     
-    /*var idnum = 3
+    var idnum = 3
     var pool = "C"
-    var subpool = "C2"*/
+    var subpool = "C2"
 
     
 var practice_list 
@@ -371,7 +371,7 @@ var writing_page = {
 // 5. likert-scale rating page
 var rating_page = {
       type: jsPsychHtmlKeyboardResponse,
-      stimulus: 'rate 一下 accuracy evaluation from 1 to 9',
+      stimulus: '選擇按下鍵盤上的1至9來評定您對該回合聽寫準確率的自信度',
       choices: ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
       on_finish: function(data){
         data.screen = "rating_page"
@@ -408,7 +408,7 @@ var interval = {
 
     var rest = {
       type: jsPsychHtmlButtonResponse,
-      stimulus: '<p> Take a break. Press button to continue.',
+      stimulus: '<p> 自行休息片刻，按下空格鍵繼續。',
       choices: ['continue'],
       response_ends_trial: true,
       data: { screen: "rest"},
@@ -466,7 +466,7 @@ var interval = {
       type: jsPsychHtmlButtonResponse,
       data: { screen: "thankyou_page" },
 			stimulus: `
-          <p>Thank you for your participation! Please click to finish. </p>`,
+          <p>感謝您的參與！點擊按鈕以結束實驗。 </p>`,
 			choices: ["結束"]
 		}
     timeline.push(thankyou)
@@ -501,5 +501,3 @@ var interval = {
     
     </script>
 </html>
-
-
