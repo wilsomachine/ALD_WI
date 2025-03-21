@@ -208,7 +208,7 @@ console.log(prac_stim)
       type: jsPsychHtmlButtonResponse,
       data: { screen: "instruction_1" },
 			stimulus: `
-          <p>您好，歡迎來到這個實驗！！當您準備好開始實驗時，請按”繼續” 。</p>`,
+          <p>您好。感謝您參與這項研究。我們正在研究聽寫反應速度和準確率。請點選以下同意繼續。</p>`,
 			choices: ["繼續"],
 		};
 		timeline.push(instruction_1);
@@ -234,7 +234,7 @@ console.log(prac_stim)
       type: jsPsychSurveyMultiSelect,
       questions: [
     {
-      prompt: " 您好。感謝您參與這項研究。我們正在研究聽寫反應速度和準確率。請點選以下同意繼續。", 
+      prompt: "您好。感謝您參與這項研究。我們正在研究聽寫反應速度和準確率。請點選以下同意繼續。", 
       options: ["我已閱讀上述資訊並收到了我提出的問題的答案。我同意參加這項研究，我已年滿 18 歲。"], 
       horizontal: true,
       required: true,
