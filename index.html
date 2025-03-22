@@ -131,7 +131,7 @@
 for (const [listName, data] of Object.entries(lists)) {
   const { array, replace } = data;
   for (let i = 0; i < array.length; i++) {
-    array[i] = array[i].replace("audio_file/", `audio_file/subpool_${replace}/`);
+    array[i] = array[i].replace("audio_file/", `audio_file/Subpool_${replace}/`);
   }
 }
 console.log(subpool)
