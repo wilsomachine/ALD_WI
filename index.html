@@ -106,11 +106,11 @@
     var pool = jsPsych.data.getURLVariable('poolIs')
     var subpool = jsPsych.data.getURLVariable('subpoolIs')
     
-    /*var idnum = 3
-    var pool = "C"
-    var subpool = "C2"*/
+   /* var idnum = 1
+    var pool = "B"
+    var subpool = "B1"*/
 
-    const lists = {
+    /*const lists = {
   A1: {array:A1, replace: "A1"},
   A2: {array:A2, replace: "A2"},
   A3: {array:A3, replace: "A3"},
@@ -133,92 +133,146 @@ for (const [listName, data] of Object.entries(lists)) {
   for (let i = 0; i < array.length; i++) {
     array[i] = array[i].replace("audio_file/", `audio_file/Subpool_${replace}/`);
   }
+}*/
+
+for (let i = 0; i < A1.length; i++) {
+  A1[i] = A1[i].replace("audio_file/", "audio_file/Subpool_A1/");
 }
+for (let i = 0; i < A2.length; i++) {
+  A2[i] = A2[i].replace("audio_file/", "audio_file/Subpool_A2/");
+}
+for (let i = 0; i < A3.length; i++) {
+  A3[i] = A3[i].replace("audio_file/", "audio_file/Subpool_A3/");
+}
+
+
+for (let i = 0; i < B1.length; i++) {
+  B1[i] = B1[i].replace("audio_file/", "audio_file/Subpool_B1/");
+}
+for (let i = 0; i < B2.length; i++) {
+  B2[i] = B2[i].replace("audio_file/", "audio_file/Subpool_B2/");
+}
+for (let i = 0; i < B3.length; i++) {
+  B3[i] = B3[i].replace("audio_file/", "audio_file/Subpool_B3/");
+}
+
+for (let i = 0; i < C1.length; i++) {
+  C1[i] = C1[i].replace("audio_file/", "audio_file/Subpool_C1/");
+}
+for (let i = 0; i < C2.length; i++) {
+  C2[i] = C2[i].replace("audio_file/", "audio_file/Subpool_C2/");
+}
+for (let i = 0; i < C3.length; i++) {
+  C3[i] = C3[i].replace("audio_file/", "audio_file/Subpool_C3/");
+}
+
+
+for (let i = 0; i < D1.length; i++) {
+  D1[i] = D1[i].replace("audio_file/", "audio_file/Subpool_D1/");
+}
+for (let i = 0; i < D2.length; i++) {
+  D2[i] = D2[i].replace("audio_file/", "audio_file/Subpool_D2/");
+}
+for (let i = 0; i < D3.length; i++) {
+  D3[i] = D3[i].replace("audio_file/", "audio_file/Subpool_D3/");
+}
+
+for (let i = 0; i < E1.length; i++) {
+  E1[i] = E1[i].replace("audio_file/", "audio_file/Subpool_E1/");
+}
+for (let i = 0; i < E2.length; i++) {
+  E2[i] = E2[i].replace("audio_file/", "audio_file/Subpool_E2/");
+}
+for (let i = 0; i < E3.length; i++) {
+  E3[i] = E3[i].replace("audio_file/", "audio_file/Subpool_E3/");
+}
+
 console.log(subpool)
 
 var practice_list 
 if (subpool === "A1"){ 
-  var practice_list = ['audio_file/HM_一切_We','audio_file/JD_下品_We','audio_file/KS_中文_We','audio_file/PC_乳液_We','audio_file/WY_交稅_We','audio_file/HM_上子_NW','audio_file/JD_公親_NW']
+  var practice_list = ['audio_file/HM_一切_We.wav','audio_file/JD_下品_We.wav','audio_file/KS_中文_We.wav','audio_file/PC_乳液_We.wav','audio_file/WY_交稅_We.wav','audio_file/HM_上子_NW.wav','audio_file/JD_公親_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_A1/");}
 
 } else if (subpool === "A2"){
-  var practice_list = ['audio_file/HM_仰頭_We','audio_file/JD_伸腰_We','audio_file/KS_佯裝_We','audio_file/PC_修飾_We','audio_file/WY_候鳥_We','audio_file/HM_來衣_NW','audio_file/JD_巔光_NW']
+  var practice_list = ['audio_file/HM_仰頭_We.wav','audio_file/JD_伸腰_We.wav','audio_file/KS_佯裝_We.wav','audio_file/PC_修飾_We.wav','audio_file/WY_候鳥_We.wav','audio_file/HM_來衣_NW.wav','audio_file/JD_巔光_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_A2/");}
 
 } else if (subpool === "A3"){
-  var practice_list = ['audio_file/HM_停業_We','audio_file/JD_元寶_We','audio_file/KS_共度_We','audio_file/PC_冰川_We','audio_file/WY_凳子_We','audio_file/HM_內失_NW','audio_file/JD_弄特_NW']
+  var practice_list = ['audio_file/HM_停業_We.wav','audio_file/JD_元寶_We.wav','audio_file/KS_共度_We.wav','audio_file/PC_冰川_We.wav','audio_file/WY_凳子_We.wav','audio_file/HM_內失_NW.wav','audio_file/JD_弄特_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_A3/");}
 
 }
 else if (subpool === "B1"){ 
-  var practice_list = ['audio_file/HM_下降_Wa','audio_file/JD_不只_Wa','audio_file/KS_主審_Wa','audio_file/PC_乃至_Wa','audio_file/WY_互相_Wa','audio_file/KS_急海_NW','audio_file/PC_寬諂_NW']
+  var practice_list = ['audio_file/HM_下降_Wa.wav','audio_file/JD_不只_Wa.wav','audio_file/KS_主審_Wa.wav','audio_file/PC_乃至_Wa.wav','audio_file/WY_互相_Wa.wav','audio_file/KS_急海_NW.wav','audio_file/PC_寬諂_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_B1/");}
 
 }else if (subpool === "B2"){
-  var practice_list = ['audio_file/HM_今晨_Wa','audio_file/JD_佐證_Wa','audio_file/KS_保健_Wa','audio_file/PC_假牙_Wa','audio_file/WY_傷痕_Wa','audio_file/KS_戰透_NW','audio_file/PC_深罷_NW']
+  var practice_list = ['audio_file/HM_今晨_Wa.wav','audio_file/JD_佐證_Wa.wav','audio_file/KS_保健_Wa.wav','audio_file/PC_假牙_Wa.wav','audio_file/WY_傷痕_Wa.wav','audio_file/KS_戰透_NW.wav','audio_file/PC_深罷_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_B2/");}
 
 }else if (subpool === "B3"){ 
-  var practice_list = ['audio_file/HM_兌換_Wa','audio_file/PC_爭招_NW','audio_file/JD_冤屈_Wa','audio_file/KS_凝望_Wa','audio_file/PC_出訪_Wa','audio_file/WY_分佈_Wa','audio_file/KS_撤禪_NW']
+  var practice_list = ['audio_file/HM_兌換_Wa.wav','audio_file/PC_爭招_NW.wav','audio_file/JD_冤屈_Wa.wav','audio_file/KS_凝望_Wa.wav','audio_file/PC_出訪_Wa.wav','audio_file/WY_分佈_Wa.wav','audio_file/KS_撤禪_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_B3/");}
 
 }
-else if (subpool === "C1"){ 
-  var practice_list = ['audio_file/HM_串騙_Wb','audio_file/JD_了結_Wb','audio_file/KS_人群_Wb','audio_file/PC_伏法_Wb','audio_file/WY_使得_Wb','audio_file/WY_誕雲_NW','audio_file/HM_不師_NW']
+else if (subpool === "C1"){
+  var practice_list = ['audio_file/HM_串騙_Wb.wav','audio_file/JD_了結_Wb.wav','audio_file/KS_人群_Wb.wav','audio_file/PC_伏法_Wb.wav','audio_file/WY_使得_Wb.wav','audio_file/WY_誕雲_NW.wav','audio_file/HM_不師_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_C1/");}
 
 }else if (subpool === "C2"){  
-  var practice_list = ['audio_file/HM_保衛_Wb','audio_file/JD_倦容_Wb','audio_file/KS_傢伙_Wb','audio_file/PC_先前_Wb','audio_file/WY_典押_Wb','audio_file/WY_離紅_NW','audio_file/HM_侏黑_NW']
+  var practice_list = ['audio_file/HM_保衛_Wb.wav','audio_file/JD_倦容_Wb.wav','audio_file/KS_傢伙_Wb.wav','audio_file/PC_先前_Wb.wav','audio_file/WY_典押_Wb.wav','audio_file/WY_離紅_NW.wav','audio_file/HM_侏黑_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_C2/");}
 
   /*var practice_list = ['audio_file/外力_word.wav','audio_file/失身_word.wav','audio_file/巧合_word.wav','audio_file/困擾_fixed.wav']*/
 }else if (subpool === "C3"){  
-  var practice_list = ['audio_file/HM_冷宮_Wb','audio_file/JD_凹處_Wb','audio_file/KS_列隊_Wb','audio_file/PC_刪除_Wb','audio_file/WY_剷平_Wb','audio_file/WY_餘露_NW','audio_file/HM_共袍_NW']
+  var practice_list = ['audio_file/HM_冷宮_Wb.wav','audio_file/JD_凹處_Wb.wav','audio_file/KS_列隊_Wb.wav','audio_file/PC_刪除_Wb.wav','audio_file/WY_剷平_Wb.wav','audio_file/WY_餘露_NW.wav','audio_file/HM_共袍_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_C3/");}
 
 }
 else if (subpool === "D1"){  
-  var practice_list = ['audio_file/HM_二胡_Wc','audio_file/JD_人數_Wc','audio_file/KS_仇人_Wc','audio_file/PC_伸冤_Wc','audio_file/WY_依傍_Wc','audio_file/JD_官決_NW','audio_file/KS_怨援_NW']
+  var practice_list = ['audio_file/HM_二胡_Wc.wav','audio_file/JD_人數_Wc.wav','audio_file/KS_仇人_Wc.wav','audio_file/PC_伸冤_Wc.wav','audio_file/WY_依傍_Wc.wav','audio_file/JD_官決_NW.wav','audio_file/KS_怨援_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_D1/");}
 
 }else if (subpool === "D2"){  
-  var practice_list = ['audio_file/HM_修造_Wc','audio_file/JD_值更_Wc','audio_file/KS_傳說_Wc','audio_file/PC_光束_Wc','audio_file/WY_冒稱_Wc','audio_file/JD_川停_NW','audio_file/KS_戲是_NW']
+  var practice_list = ['audio_file/HM_修造_Wc.wav','audio_file/JD_值更_Wc.wav','audio_file/KS_傳說_Wc.wav','audio_file/PC_光束_Wc.wav','audio_file/WY_冒稱_Wc.wav','audio_file/JD_川停_NW.wav','audio_file/KS_戲是_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_D2/");}
 
-}else if (subpool === "D3"){ 
-  var practice_list = ['audio_file/HM_凌虐_Wc','audio_file/JD_出血_Wc','audio_file/KS_前哨_Wc','audio_file/PC_剪裁_Wc','audio_file/WY_劃定_Wc','audio_file/JD_弊浮_NW','audio_file/KS_擅然_NW']
+}else if (subpool === "D3"){
+  var practice_list = ['audio_file/HM_凌虐_Wc.wav','audio_file/JD_出血_Wc.wav','audio_file/KS_前哨_Wc.wav','audio_file/PC_剪裁_Wc.wav','audio_file/WY_劃定_W.wav','audio_file/JD_弊浮_NW.wav','audio_file/KS_擅然_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_D3/");}
 
 }
-else if (subpool === "E1"){ 
-  var practice_list = ['audio_file/HM_丫頭_Wd','audio_file/JD_他殺_Wd','audio_file/KS_佩帶_Wd','audio_file/PC_修煉_Wd','audio_file/WY_僅見_Wd','audio_file/PC_毒替_NW','audio_file/WY_談形_NW']
+else if (subpool === "E1"){
+  var practice_list = ['audio_file/HM_丫頭_Wd.wav','audio_file/JD_他殺_Wd.wav','audio_file/KS_佩帶_Wd.wav','audio_file/PC_修煉_Wd.wav','audio_file/WY_僅見_Wd.wav','audio_file/PC_毒替_NW.wav','audio_file/WY_談形_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_E1/");}
 
-}else if (subpool === "E2"){ 
-  var practice_list = ['audio_file/HM_公頃_Wd','audio_file/JD_凝聚_Wd','audio_file/KS_分段_Wd','audio_file/PC_剪掉_Wd','audio_file/WY_北極_Wd','audio_file/PC_游役_NW','audio_file/WY_雨形_NW']
+}else if (subpool === "E2"){
+  var practice_list = ['audio_file/HM_公頃_Wd.wav','audio_file/JD_凝聚_Wd.wav','audio_file/KS_分段_Wd.wav','audio_file/PC_剪掉_Wd.wav','audio_file/WY_北極_Wd.wav','audio_file/PC_游役_NW.wav','audio_file/WY_雨形_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_E2/");}
 
-}else if (subpool === "E3"){ 
-  var practice_list = ['audio_file/HM_原藉_Wd','audio_file/JD_同樣_Wd','audio_file/KS_周遭_Wd','audio_file/PC_土產_Wd','audio_file/WY_天庭_Wd','audio_file/PC_片罪_NW','audio_file/WY_饌敲_NW']
+}else if (subpool === "E3"){
+  var practice_list = ['audio_file/HM_原藉_Wd.wav','audio_file/JD_同樣_Wd.wav','audio_file/KS_周遭_Wd.wav','audio_file/PC_土產_Wd.wav','audio_file/WY_天庭_Wd.wav','audio_file/PC_片罪_NW.wav','audio_file/WY_饌敲_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_E3/");}
 
 }
 
+console.log(practice_list)
 
 // select the subpool of stimuli as experiment_list
 var experiment_list
