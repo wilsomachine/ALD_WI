@@ -128,30 +128,6 @@ console.log(E3.length)
     var pool = "C"
     var subpool = "C1"*/
 
-    /*const lists = {
-  A1: {array:A1, replace: "A1"},
-  A2: {array:A2, replace: "A2"},
-  A3: {array:A3, replace: "A3"},
-  B1: {array:A1, replace: "B1"},
-  B2: {array:B2, replace: "B2"},
-  B3: {array:B3, replace: "B3"},
-  C1: {array:C1, replace: "C1"},
-  C2: {array:C2, replace: "C2"},
-  C3: {array:C3, replace: "C3"},
-  D1: {array:D1, replace: "D1"},
-  D2: {array:D2, replace: "D2"},
-  D3: {array:D3, replace: "D3"},
-  E1: {array:E1, replace: "E1"},
-  E2: {array:E2, replace: "E2"},
-  E3: {array:E3, replace: "E3"},
-};
-
-for (const [listName, data] of Object.entries(lists)) {
-  const { array, replace } = data;
-  for (let i = 0; i < array.length; i++) {
-    array[i] = array[i].replace("audio_file/", `audio_file/Subpool_${replace}/`);
-  }
-}*/
 
 for (let i = 0; i < A1.length; i++) {
   A1[i] = A1[i].replace("audio_file/", "audio_file/Subpool_A1/");
@@ -315,16 +291,6 @@ console.log(experiment_list)
 
 
 var i, j
-/*var exp_stim = 
-[{current_stimuli: 'audio_file/受賄_word.wav'}，
-{current_stimuli: 'audio_file/周遭_word.wav'}，
-{current_stimuli: 'audio_file/呼吸_word.wav'},
-{current_stimuli: 'audio_file/呼吸_word.wav'},
-{current_stimuli: 'audio_file/呼吸_word.wav'},
-{current_stimuli: 'audio_file/呼吸_word.wav'},
-{current_stimuli: 'audio_file/呼吸_word.wav'},
-{current_stimuli: 'audio_file/呼吸_word.wav'},
-{current_stimuli: 'audio_file/呼吸_word.wav'}]*/
 
 var exp_stim = []
 
@@ -344,7 +310,7 @@ console.log(prac_stim)
 
 /* added March 23rd */
 
-function splitIntoFifths(array) {
+/*function splitIntoFifths(array) {
   const length = array.length;
 
   if (length < 5) {
@@ -388,7 +354,7 @@ console.log(exp_first.length)
 console.log(exp_second.length)
 console.log(exp_third.length)
 console.log(exp_fourth.length)
-console.log(exp_last.length)
+console.log(exp_last.length)*/
 
 
 
@@ -420,15 +386,6 @@ var preload_prac = {
     } 
     timeline.push(fullscreen_on);
 
-
-    var preload_1 = {     //necessecity to preload audio in batches?
-      type: jsPsychPreload,
-      audio: exp_first,
-      show_progress_bar: true,
-      show_detailed_errors: true
-    }
-    timeline.push(preload_1);
-
     var consent = {
       type: jsPsychSurveyMultiSelect,
       questions: [
@@ -441,14 +398,7 @@ var preload_prac = {
     }
   ]}
     timeline.push(consent)
-    
-    var preload_2 = {     //necessecity to preload audio in batches?
-      type: jsPsychPreload,
-      audio: exp_second,
-      show_progress_bar: true,
-      show_detailed_errors: true
-    }
-    timeline.push(preload_2);
+
 
     var instruction_2 = {
       type: jsPsychHtmlButtonResponse,
@@ -477,7 +427,6 @@ var preload_prac = {
 
     
 
-	var direction = "s2v"
 
     var instruction_3 = {
       type: jsPsychHtmlButtonResponse,
@@ -663,14 +612,6 @@ var interval = {
 
     timeline.push(practice_block)
 
-    var preload_4 = {     //necessecity to preload audio in batches?
-      type: jsPsychPreload,
-      audio: exp_fourth,
-      show_progress_bar: true,
-      show_detailed_errors: true
-    }
-    timeline.push(preload_4);
-
 
     var instruction_4 = {
       type: jsPsychHtmlButtonResponse,
@@ -684,13 +625,6 @@ var interval = {
     };
   timeline.push(instruction_4)
 
-  var preload_5 = {     //necessecity to preload audio in batches?
-      type: jsPsychPreload,
-      audio: exp_last,
-      show_progress_bar: true,
-      show_detailed_errors: true
-    }
-    timeline.push(preload_5);
 
   
 
