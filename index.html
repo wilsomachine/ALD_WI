@@ -470,7 +470,6 @@ var writing_page = {
   type: jsPsychSketchpad,
   prompt: '<p>請寫下剛剛聽到的複合詞</u><br><p>若您聽到了非複合詞則直接畫一個‘x’。</u><br><p>完成按空格鍵繼續。</p>',
   prompt_location: 'abovecanvas',
-  background_image: `<img src="black_pic.jpg" crossorigin="anonymous">`,
   canvas_width: 300,
   canvas_height: 200,
   canvas_border_width: 2,
@@ -478,7 +477,13 @@ var writing_page = {
   show_redo_button: false,
   show_undo_button: false, // space bar OR button?
   show_finish_button: false,
-  choices:"6",
+  choices: "6",
+  // 添加纯黑背景作为遮罩
+  on_load: function() {
+    var canvas = document.querySelector('canvas');
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   //background_color: "#000000",   //try original first and see if black is fine // also, save image one-by-one? //image saving format?
     on_finish: function(data){
