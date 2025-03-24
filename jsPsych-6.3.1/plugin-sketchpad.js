@@ -4,6 +4,12 @@ var jsPsychSketchpad = (function (jspsych) {
   const info = {
       name: "sketchpad",
       parameters: {
+            /*added March24*/
+            transparent_background: {
+                type: jspsych.ParameterType.BOOL,
+                default: false
+              },
+
           /**
            * The shape of the canvas element. Accepts `'rectangle'` or `'circle'`
            */
@@ -306,6 +312,11 @@ var jsPsychSketchpad = (function (jspsych) {
           this.display.innerHTML = display_html;
           this.sketchpad = this.display.querySelector("#sketchpad-canvas");
           this.ctx = this.sketchpad.getContext("2d");
+          //added Mar24//
+          if(this.params.transparent_background) {
+            this.sketchpad.style.backgroundColor = "transparent";
+            this.ctx.globalCompositeOperation = "copy"; // 保持绘制内容透明
+          }
       }
       setup_event_listeners() {
           document.addEventListener("pointermove", (e) => {
@@ -411,7 +422,7 @@ var jsPsychSketchpad = (function (jspsych) {
         }
       </style>`);
       }
-      add_background_color() {
+      /*add_background_color() {
           this.ctx.fillStyle = this.params.background_color;
           if (this.params.canvas_shape == "rectangle") {
               this.ctx.fillRect(0, 0, this.params.canvas_width, this.params.canvas_height);
@@ -419,6 +430,19 @@ var jsPsychSketchpad = (function (jspsych) {
           if (this.params.canvas_shape == "circle") {
               this.ctx.fillRect(0, 0, this.params.canvas_diameter, this.params.canvas_diameter);
           }
+      }*/
+      add_background_color() {
+        if(!this.params.transparent_background) {
+          this.ctx.fillStyle = this.params.background_color;
+          if (this.params.canvas_shape == "rectangle") {
+            this.ctx.fillRect(0, 0, this.params.canvas_width, this.params.canvas_height);
+          } else {
+            this.ctx.fillRect(0, 0, this.params.canvas_diameter, this.params.canvas_diameter);
+          }
+        } else {
+          // 透明背景时清空画布
+          this.ctx.clearRect(0, 0, this.sketchpad.width, this.sketchpad.height);
+        }
       }
       add_background_image() {
           return new Promise((resolve, reject) => {
@@ -482,8 +506,14 @@ var jsPsychSketchpad = (function (jspsych) {
           this.is_drawing = false;
       }
       render_drawing() {
-          this.ctx.clearRect(0, 0, this.sketchpad.width, this.sketchpad.height);
-          this.add_background_color();
+          //this.ctx.clearRect(0, 0, this.sketchpad.width, this.sketchpad.height);
+          //this.add_background_color();
+          if(this.params.transparent_background) {
+            this.ctx.clearRect(0, 0, this.sketchpad.width, this.sketchpad.height);
+          } else {
+            this.ctx.fillStyle = this.params.background_color;
+            this.ctx.fillRect(0, 0, this.sketchpad.width, this.sketchpad.height);
+          };
           if (this.background_image) {
               this.ctx.drawImage(this.background_image, 0, 0);
           }
