@@ -482,18 +482,17 @@ var writing_page = {
   choices: " ",
   trial_duration: 5000, // Initial duration
   on_load: function() {
-    // Get the current trial instance
+    console.log("Trial loaded, waiting for first input...");
+  },
+  on_interaction_data: function(interaction) {
+    // Check if this is the first interaction
     let trial = jsPsych.currentTrial();
-    
-    // Add an event listener to detect the first drawing interaction
-    let isFirstInput = true;
-    document.querySelector('.jspsych-sketchpad-container').addEventListener('mousedown', function() {
-      if (isFirstInput) {
-        // When the first input is detected, set trial_duration to null
-        trial.trial_duration = null;
-        isFirstInput = false; // Prevent this from triggering again
-      }
-    });
+    if (interaction.event === "mousedown" && trial.trial_duration !== null) {
+      console.log("First input detected, setting trial_duration to null");
+      trial.trial_duration = null; // Attempt to set to null
+      // Alternatively, extend duration to a very large number if null doesn't work
+      // trial.trial_duration = Infinity;
+    }
   },
   on_finish: function(data) {
     data.screen = "writing_page";
@@ -501,6 +500,7 @@ var writing_page = {
     data.trialnum = trialnum;
     data.current_stimuli = current_stimuli;
     data.trial_types = trial_types;
+    console.log("Trial finished, trial_duration was:", data.trial_duration);
   }
 };
 
