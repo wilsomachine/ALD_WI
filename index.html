@@ -19,7 +19,6 @@
     <script src="https://unpkg.com/@jspsych/plugin-survey-multi-select@1.1.3"></script>
     <script src="https://unpkg.com/@jspsych/plugin-sketchpad@1.0.4"></script>
     <script src="jsPsych-6.3.1/plugin-audio-keyboard-response.js"></script>
-    <script src="jsPsych-6.3.1/extension-mouse-tracking.js"></script>
     <meta http-equiv='content-Type' content='text/html; charset=utf-8'/>
 
 
@@ -482,38 +481,12 @@ var writing_page = {
   background_color: 'rgba(0,0,0,0)',
   choices: " ",
   trial_duration: 5000, // Initial duration
-  extensions: [
-    { type: jsPsychExtensionMouseTracking, params: { events: ["mousemove"] } }
-  ],
-  on_load: function() {
-    console.log("Trial loaded, waiting for first mouse movement...");
-    let trial = jsPsych.currentTrial();
-    let hasMoved = false;
-
-    // Override the extension's mouseMoveEventHandler to detect the first movement
-    trial.extensions[0].mouseMoveEventHandler = function({ clientX: x, clientY: y }) {
-      const event_time = performance.now();
-      const t = Math.round(event_time - trial.extensions[0].currentTrialStartTime);
-      if (!hasMoved && trial.trial_duration !== null) {
-        console.log("First mouse movement detected at x:", x, "y:", y, "setting trial_duration to null");
-        trial.trial_duration = null; // Set to null on first movement
-        hasMoved = true; // Prevent further changes
-      }
-      // Continue collecting data as per the extension
-      if (trial.extensions[0].lastSampleTime === null ||
-          event_time - trial.extensions[0].lastSampleTime >= trial.extensions[0].minimumSampleTime) {
-        trial.extensions[0].lastSampleTime = event_time;
-        trial.extensions[0].currentTrialData.push({ x, y, t, event: "mousemove" });
-      }
-    };
-  },
   on_finish: function(data) {
     data.screen = "writing_page";
     data.blocknum = blocknum;
     data.trialnum = trialnum;
     data.current_stimuli = current_stimuli;
     data.trial_types = trial_types;
-    data.mouse_tracking_data = jsPsych.data.get().last(1).values()[0].mouse_tracking_data; // Store mouse tracking data
     console.log("Trial finished, trial_duration was:", data.trial_duration);
   }
 };
