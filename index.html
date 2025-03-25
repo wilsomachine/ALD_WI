@@ -480,25 +480,20 @@ var writing_page = {
   transparent_background: true,
   background_color: 'rgba(0,0,0,0)',
   choices: " ",
-  trial_duration: null, // Ensure no default jsPsych timer interferes
+  trial_duration: 5000,
   on_load: function() {
-    // Reference the sketchpad canvas
-    const sketchpad = document.querySelector('.jspsych-sketchpad-container canvas');
-    if (!sketchpad) {
-      console.error('Canvas not found');
-      return;
-    }
-
-    // Set up the 5-second timer
-    const timerId = setTimeout(() => {
-      jsPsych.finishTrial(); // End the trial if no input after 5 seconds
-    }, 5000);
-
-    // Add a click event listener to deactivate the timer on the first click
-    sketchpad.addEventListener('mousedown', () => {
-      clearTimeout(timerId); // Deactivate the timer
-      // No need to remove the listener manually since 'once' handles it
-    }, { once: true }); // Ensures it only triggers on the first click
+    // Add click event listener to the canvas
+    let canvas = document.querySelector('.jspsych-sketchpad-container canvas');
+    let hasClicked = false;
+    
+    canvas.addEventListener('mousedown', function(e) {
+      // Check if it's left click (button 0) and hasn't clicked before
+      if (e.button === 0 && !hasClicked) {
+        hasClicked = true;
+        // Set trial_duration to null
+        jsPsych.getCurrentTrial().trial_duration = null;
+      }
+    });
   },
   on_finish: function(data) {
     data.screen = "writing_page";
