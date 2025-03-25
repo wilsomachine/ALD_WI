@@ -4,221 +4,126 @@ var jsPsychSketchpad = (function (jspsych) {
   const info = {
       name: "sketchpad",
       parameters: {
-            /*added March24*/
-            transparent_background: {
-                type: jspsych.ParameterType.BOOL,
-                default: false
-              },
-
-          /**
-           * The shape of the canvas element. Accepts `'rectangle'` or `'circle'`
-           */
+          transparent_background: {
+              type: jspsych.ParameterType.BOOL,
+              default: false
+          },
           canvas_shape: {
               type: jspsych.ParameterType.STRING,
               default: "rectangle",
           },
-          /**
-           * Width of the canvas in pixels.
-           */
           canvas_width: {
               type: jspsych.ParameterType.INT,
               default: 500,
           },
-          /**
-           * Width of the canvas in pixels.
-           */
           canvas_height: {
               type: jspsych.ParameterType.INT,
               default: 500,
           },
-          /**
-           * Diameter of the canvas (when `canvas_shape` is `'circle'`) in pixels.
-           */
           canvas_diameter: {
               type: jspsych.ParameterType.INT,
               default: 500,
           },
-          /**
-           * This width of the border around the canvas element
-           */
           canvas_border_width: {
               type: jspsych.ParameterType.INT,
               default: 0,
           },
-          /**
-           * The color of the border around the canvas element.
-           */
           canvas_border_color: {
               type: jspsych.ParameterType.STRING,
               default: "#000",
           },
-          /**
-           * Path to an image to render as the background of the canvas.
-           */
           background_image: {
               type: jspsych.ParameterType.IMAGE,
               default: null,
           },
-          /**
-           * Background color of the canvas.
-           */
           background_color: {
               type: jspsych.ParameterType.STRING,
               default: "#ffffff",
           },
-          /**
-           * The width of the strokes on the canvas.
-           */
           stroke_width: {
               type: jspsych.ParameterType.INT,
               default: 2,
           },
-          /**
-           * The color of the stroke on the canvas
-           */
           stroke_color: {
               type: jspsych.ParameterType.STRING,
               default: "#000000",
           },
-          /**
-           * An array of colors to render as a palette of options for stroke colors.
-           */
           stroke_color_palette: {
               type: jspsych.ParameterType.STRING,
               array: true,
               default: [],
           },
-          /**
-           * HTML content to render above or below the canvas (use `prompt_location` parameter to change location).
-           */
           prompt: {
               type: jspsych.ParameterType.HTML_STRING,
               default: null,
           },
-          /**
-           * Location of the `prompt` content. Can be 'abovecanvas' or 'belowcanvas' or 'belowbutton'.
-           */
           prompt_location: {
               type: jspsych.ParameterType.STRING,
               default: "abovecanvas",
           },
-          /**
-           * Whether to save the final image in the data as dataURL
-           */
           save_final_image: {
               type: jspsych.ParameterType.BOOL,
               default: true,
           },
-          /**
-           * Whether to save the set of strokes that generated the image
-           */
           save_strokes: {
               type: jspsych.ParameterType.BOOL,
               default: true,
           },
-          /**
-           * If this key is held down then it is like the mouse button being clicked for controlling
-           * the flow of the "ink".
-           */
           key_to_draw: {
               type: jspsych.ParameterType.KEY,
               default: null,
           },
-          /**
-           * Whether to show the button that ends the trial
-           */
           show_finished_button: {
               type: jspsych.ParameterType.BOOL,
               default: true,
           },
-          /**
-           * The label for the button that ends the trial
-           */
           finished_button_label: {
               type: jspsych.ParameterType.STRING,
               default: "Finished",
           },
-          /**
-           * Whether to show the button that clears the entire drawing.
-           */
           show_clear_button: {
               type: jspsych.ParameterType.BOOL,
               default: true,
           },
-          /**
-           * The label for the button that clears the entire drawing.
-           */
           clear_button_label: {
               type: jspsych.ParameterType.STRING,
               default: "Clear",
           },
-          /**
-           * Whether to show the button that enables an undo action.
-           */
           show_undo_button: {
               type: jspsych.ParameterType.BOOL,
               default: true,
           },
-          /**
-           * The label for the button that performs an undo action.
-           */
           undo_button_label: {
               type: jspsych.ParameterType.STRING,
               default: "Undo",
           },
-          /**
-           * Whether to show the button that enables an redo action. `show_undo_button` must also
-           * be `true` for the redo button to show.
-           */
           show_redo_button: {
               type: jspsych.ParameterType.BOOL,
               default: true,
           },
-          /**
-           * The label for the button that performs an redo action.
-           */
           redo_button_label: {
               type: jspsych.ParameterType.STRING,
               default: "Redo",
           },
-          /**
-           * Array of keys that will end the trial when pressed.
-           */
           choices: {
               type: jspsych.ParameterType.KEYS,
               default: "NO_KEYS",
           },
-          /**
-           * Length of time before trial ends. If `null` the trial will not timeout.
-           */
           trial_duration: {
               type: jspsych.ParameterType.INT,
               default: null,
           },
-          /**
-           * Whether to show a countdown timer for the remaining trial duration
-           */
           show_countdown_trial_duration: {
               type: jspsych.ParameterType.BOOL,
               default: false,
           },
-          /**
-           * The html for the countdown timer.
-           */
           countdown_timer_html: {
               type: jspsych.ParameterType.HTML_STRING,
               default: `<span id="sketchpad-timer"></span> remaining`,
           },
       },
   };
-  /**
-   * **sketchpad**
-   *
-   * jsPsych plugin for displaying a canvas stimulus and getting a slider response
-   *
-   * @author Josh de Leeuw
-   * @see {@link https://www.jspsych.org/latest/plugins/sketchpad/ sketchpad plugin documentation on jspsych.org}
-   */
+
   class SketchpadPlugin {
       constructor(jsPsych) {
           this.jsPsych = jsPsych;
@@ -228,7 +133,10 @@ var jsPsychSketchpad = (function (jspsych) {
           this.undo_history = [];
           this.mouse_position = { x: 0, y: 0 };
           this.draw_key_held = false;
+          // Grok MODE: Add flag to track if key has been held down for the first time
+          this.first_key_held = false;
       }
+
       trial(display_element, trial, on_load) {
           this.display = display_element;
           this.params = trial;
@@ -245,6 +153,7 @@ var jsPsychSketchpad = (function (jspsych) {
               this.trial_finished_handler = resolve;
           });
       }
+
       init_display() {
           this.add_css();
           let canvas_html;
@@ -312,12 +221,12 @@ var jsPsychSketchpad = (function (jspsych) {
           this.display.innerHTML = display_html;
           this.sketchpad = this.display.querySelector("#sketchpad-canvas");
           this.ctx = this.sketchpad.getContext("2d");
-          //added Mar24//
           if(this.params.transparent_background) {
             this.sketchpad.style.backgroundColor = "transparent";
             this.ctx.globalCompositeOperation = "copy"; // 保持绘制内容透明
           }
       }
+
       setup_event_listeners() {
           document.addEventListener("pointermove", (e) => {
               this.mouse_position = { x: e.clientX, y: e.clientY };
@@ -327,15 +236,27 @@ var jsPsychSketchpad = (function (jspsych) {
                   this.end_trial("button");
               });
           }
-          this.sketchpad.addEventListener("pointerdown", this.start_draw);
-          this.sketchpad.addEventListener("pointermove", this.move_draw);
-          this.sketchpad.addEventListener("pointerup", this.end_draw);
-          this.sketchpad.addEventListener("pointerleave", this.end_draw);
-          this.sketchpad.addEventListener("pointercancel", this.end_draw);
+          this.sketchpad.addEventListener("pointerdown", this.start_draw.bind(this));
+          this.sketchpad.addEventListener("pointermove", this.move_draw.bind(this));
+          this.sketchpad.addEventListener("pointerup", this.end_draw.bind(this));
+          this.sketchpad.addEventListener("pointerleave", this.end_draw.bind(this));
+          this.sketchpad.addEventListener("pointercancel", this.end_draw.bind(this));
           if (this.params.key_to_draw !== null) {
               document.addEventListener("keydown", (e) => {
                   if (e.key == this.params.key_to_draw && !this.is_drawing && !this.draw_key_held) {
                       this.draw_key_held = true;
+                      // Grok MODE: Detect first key hold and reset trial_duration
+                      if (!this.first_key_held && this.params.trial_duration !== null) {
+                          console.log("First key hold detected, setting trial_duration to null");
+                          this.params.trial_duration = null;
+                          this.first_key_held = true;
+                          this.jsPsych.pluginAPI.clearAllTimeouts(); // Cancel existing timeout
+                          if (this.params.show_countdown_trial_duration) {
+                              clearInterval(this.timer_interval); // Stop countdown timer
+                              const timer_span = this.display.querySelector("#sketchpad-timer");
+                              if (timer_span) timer_span.innerHTML = ""; // Clear timer display
+                          }
+                      }
                       if (document.elementFromPoint(this.mouse_position.x, this.mouse_position.y) ==
                           this.sketchpad) {
                           this.sketchpad.dispatchEvent(new PointerEvent("pointerdown", {
@@ -359,13 +280,13 @@ var jsPsychSketchpad = (function (jspsych) {
               });
           }
           if (this.params.show_undo_button) {
-              this.display.querySelector("#sketchpad-undo").addEventListener("click", this.undo);
+              this.display.querySelector("#sketchpad-undo").addEventListener("click", this.undo.bind(this));
               if (this.params.show_redo_button) {
-                  this.display.querySelector("#sketchpad-redo").addEventListener("click", this.redo);
+                  this.display.querySelector("#sketchpad-redo").addEventListener("click", this.redo.bind(this));
               }
           }
           if (this.params.show_clear_button) {
-              this.display.querySelector("#sketchpad-clear").addEventListener("click", this.clear);
+              this.display.querySelector("#sketchpad-clear").addEventListener("click", this.clear.bind(this));
           }
           const color_btns = Array.from(this.display.querySelectorAll(".sketchpad-color-select"));
           for (const btn of color_btns) {
@@ -375,12 +296,13 @@ var jsPsychSketchpad = (function (jspsych) {
               });
           }
           this.jsPsych.pluginAPI.getKeyboardResponse({
-              callback_function: this.after_key_response,
+              callback_function: this.after_key_response.bind(this),
               valid_responses: this.params.choices,
               persist: false,
               allow_held_key: false,
           });
       }
+
       add_css() {
           document.querySelector("head").insertAdjacentHTML("beforeend", `<style id="sketchpad-styles">
         #sketchpad-controls {
@@ -422,15 +344,7 @@ var jsPsychSketchpad = (function (jspsych) {
         }
       </style>`);
       }
-      /*add_background_color() {
-          this.ctx.fillStyle = this.params.background_color;
-          if (this.params.canvas_shape == "rectangle") {
-              this.ctx.fillRect(0, 0, this.params.canvas_width, this.params.canvas_height);
-          }
-          if (this.params.canvas_shape == "circle") {
-              this.ctx.fillRect(0, 0, this.params.canvas_diameter, this.params.canvas_diameter);
-          }
-      }*/
+
       add_background_color() {
         if(!this.params.transparent_background) {
           this.ctx.fillStyle = this.params.background_color;
@@ -440,10 +354,10 @@ var jsPsychSketchpad = (function (jspsych) {
             this.ctx.fillRect(0, 0, this.params.canvas_diameter, this.params.canvas_diameter);
           }
         } else {
-          // 透明背景时清空画布
           this.ctx.clearRect(0, 0, this.sketchpad.width, this.sketchpad.height);
         }
       }
+
       add_background_image() {
           return new Promise((resolve, reject) => {
               if (this.params.background_image !== null) {
@@ -459,6 +373,7 @@ var jsPsychSketchpad = (function (jspsych) {
               }
           });
       }
+
       start_draw(e) {
           this.is_drawing = true;
           const x = Math.round(e.clientX - this.sketchpad.getBoundingClientRect().left);
@@ -480,6 +395,7 @@ var jsPsychSketchpad = (function (jspsych) {
           });
           this.sketchpad.releasePointerCapture(e.pointerId);
       }
+
       move_draw(e) {
           if (this.is_drawing) {
               const x = Math.round(e.clientX - this.sketchpad.getBoundingClientRect().left);
@@ -493,6 +409,7 @@ var jsPsychSketchpad = (function (jspsych) {
               });
           }
       }
+
       end_draw(e) {
           if (this.is_drawing) {
               this.stroke.push({
@@ -505,9 +422,8 @@ var jsPsychSketchpad = (function (jspsych) {
           }
           this.is_drawing = false;
       }
+
       render_drawing() {
-          //this.ctx.clearRect(0, 0, this.sketchpad.width, this.sketchpad.height);
-          //this.add_background_color();
           if(this.params.transparent_background) {
             this.ctx.clearRect(0, 0, this.sketchpad.width, this.sketchpad.height);
           } else {
@@ -533,6 +449,7 @@ var jsPsychSketchpad = (function (jspsych) {
               }
           }
       }
+
       undo() {
           this.undo_history.push(this.strokes.pop());
           this.set_redo_btn_state(true);
@@ -541,6 +458,7 @@ var jsPsychSketchpad = (function (jspsych) {
           }
           this.render_drawing();
       }
+
       redo() {
           this.strokes.push(this.undo_history.pop());
           this.set_undo_btn_state(true);
@@ -549,6 +467,7 @@ var jsPsychSketchpad = (function (jspsych) {
           }
           this.render_drawing();
       }
+
       clear() {
           this.strokes = [];
           this.undo_history = [];
@@ -557,21 +476,25 @@ var jsPsychSketchpad = (function (jspsych) {
           this.set_undo_btn_state(false);
           this.set_clear_btn_state(false);
       }
+
       set_undo_btn_state(enabled) {
           if (this.params.show_undo_button) {
               this.display.querySelector("#sketchpad-undo").disabled = !enabled;
           }
       }
+
       set_redo_btn_state(enabled) {
           if (this.params.show_undo_button && this.params.show_redo_button) {
               this.display.querySelector("#sketchpad-redo").disabled = !enabled;
           }
       }
+
       set_clear_btn_state(enabled) {
           if (this.params.show_clear_button) {
               this.display.querySelector("#sketchpad-clear").disabled = !enabled;
           }
       }
+
       set_trial_duration_timer() {
           if (this.params.trial_duration !== null) {
               this.jsPsych.pluginAPI.setTimeout(() => {
@@ -602,9 +525,11 @@ var jsPsychSketchpad = (function (jspsych) {
               }
           }
       }
+
       after_key_response(info) {
           this.end_trial(info.key);
       }
+
       end_trial(response = null) {
           this.jsPsych.pluginAPI.clearAllTimeouts();
           this.jsPsych.pluginAPI.cancelAllKeyboardResponses();
