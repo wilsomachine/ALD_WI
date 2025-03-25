@@ -481,16 +481,30 @@ var writing_page = {
   background_color: 'rgba(0,0,0,0)',
   choices: " ",
   trial_duration: 5000, // Initial duration
+  extensions: [
+    { type: jsPsychExtensionMouseTracking, params: { events: ["mousemove"] } }
+  ],
   on_load: function() {
-    console.log("Trial loaded, waiting for dragging input...");
-  },
-  on_interaction_data: function(interaction) {
+    console.log("Trial loaded, waiting for first mouse movement...");
     let trial = jsPsych.currentTrial();
-    // Detect dragging (mousemove while mouse is down)
-    if (interaction.event === "mousemove" && trial.trial_duration !== null) {
-      console.log("Dragging detected, setting trial_duration to null");
-      trial.trial_duration = null; // Set to null when dragging starts
-    }
+    let hasMoved = false;
+
+    // Override the extension's mouseMoveEventHandler to detect the first movement
+    trial.extensions[0].mouseMoveEventHandler = function({ clientX: x, clientY: y }) {
+      const event_time = performance.now();
+      const t = Math.round(event_time - trial.extensions[0].currentTrialStartTime);
+      if (!hasMoved && trial.trial_duration !== null) {
+        console.log("First mouse movement detected at x:", x, "y:", y, "setting trial_duration to null");
+        trial.trial_duration = null; // Set to null on first movement
+        hasMoved = true; // Prevent further changes
+      }
+      // Continue collecting data as per the extension
+      if (trial.extensions[0].lastSampleTime === null ||
+          event_time - trial.extensions[0].lastSampleTime >= trial.extensions[0].minimumSampleTime) {
+        trial.extensions[0].lastSampleTime = event_time;
+        trial.extensions[0].currentTrialData.push({ x, y, t, event: "mousemove" });
+      }
+    };
   },
   on_finish: function(data) {
     data.screen = "writing_page";
@@ -498,46 +512,10 @@ var writing_page = {
     data.trialnum = trialnum;
     data.current_stimuli = current_stimuli;
     data.trial_types = trial_types;
+    data.mouse_tracking_data = jsPsych.data.get().last(1).values()[0].mouse_tracking_data; // Store mouse tracking data
     console.log("Trial finished, trial_duration was:", data.trial_duration);
   }
 };
-
-
-// 5. likert-scale rating page
-var rating_page = {
-      type: jsPsychHtmlKeyboardResponse,
-      stimulus: '按下鍵盤上的1至9來評定您對準確聽寫該複合詞率有多大信心',
-      choices: ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
-      on_finish: function(data){
-        data.screen = "rating_page"
-        data.blocknum = blocknum 
-        data.trialnum = trialnum
-        data.trial_types = trial_types
-        data.current_stimuli = current_stimuli
-      }
-    }
-
-// 6. intertrial interval
-var interval = {
-      type: jsPsychHtmlKeyboardResponse,
-      stimulus: function(){
-        current_stimuli = jsPsych.timelineVariable("current_stimuli")
-        if (practice_list.includes(current_stimuli)){
-          return ('')
-        } else { 
-          return ('')
-        }
-      },
-      choices: "NO_KEYS",
-      trial_duration: 1250,
-      on_finish: function(data){
-        data.screen = "interval"
-        data.blocknum = blocknum 
-        data.trialnum = trialnum
-        data.current_stimuli = current_stimuli
-        data.trial_types = trial_types
-      }
-    }
 
   
 
