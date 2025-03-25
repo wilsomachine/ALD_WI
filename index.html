@@ -480,7 +480,24 @@ var writing_page = {
   transparent_background: true,
   background_color: 'rgba(0,0,0,0)',
   choices: " ",
-  trial_duration: 5000,  // 5000 milliseconds = 5 seconds
+  trial_duration: 5000,  // Initial 5-second timeout
+  on_load: function() {
+    // Get the sketchpad canvas element
+    var sketchpad = document.querySelector('.jspsych-sketchpad-container canvas');
+    var trial = jsPsych.currentTrial();
+    
+    // Function to disable timer when input is detected
+    function disableTimer() {
+      trial.trial_duration = null;  // Set trial_duration to null to disable the timeout
+    }
+    
+    // Add event listener for drawing input
+    sketchpad.addEventListener('mousedown', function() {
+      disableTimer();
+      // Remove the event listener after first input to prevent multiple triggers
+      sketchpad.removeEventListener('mousedown', disableTimer);
+    });
+  },
   on_finish: function(data){
     data.screen = "writing_page"
     data.blocknum = blocknum
