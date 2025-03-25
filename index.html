@@ -121,13 +121,13 @@ console.log(E3.length)
     console.log(all_stimuli_lists)
 
     //INPUT from participants 
-    var idnum = parseInt(jsPsych.data.getURLVariable('idnum'))
+    /*var idnum = parseInt(jsPsych.data.getURLVariable('idnum'))
     var pool = jsPsych.data.getURLVariable('poolIs')
-    var subpool = jsPsych.data.getURLVariable('subpoolIs')
+    var subpool = jsPsych.data.getURLVariable('subpoolIs')*/
     
-   /* var idnum = 3
+    var idnum = 3
     var pool = "E"
-    var subpool = "E1"*/
+    var subpool = "E1"
 
 
 for (let i = 0; i < A1.length; i++) {
@@ -480,18 +480,19 @@ var writing_page = {
   transparent_background: true,
   background_color: 'rgba(0,0,0,0)',
   choices: " ",
-  trial_duration: 5000, // Initial duration
+  trial_duration: 5000, // Optional: still applies if no input, but no-input timeout takes precedence
   on_finish: function(data) {
     data.screen = "writing_page";
     data.blocknum = blocknum;
     data.trialnum = trialnum;
     data.current_stimuli = current_stimuli;
     data.trial_types = trial_types;
-    console.log("Trial finished, trial_duration was:", data.trial_duration);
+    console.log("Trial ended with response:", data.response);
   }
 };
 
-  // 5. likert-scale rating page
+  
+ // 5. likert-scale rating page
  var rating_page = {
        type: jsPsychHtmlKeyboardResponse,
        stimulus: '按下鍵盤上的1至9來評定您對準確聽寫該複合詞率有多大信心',
