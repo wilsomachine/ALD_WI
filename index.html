@@ -480,18 +480,18 @@ var writing_page = {
   transparent_background: true,
   background_color: 'rgba(0,0,0,0)',
   choices: " ",
-  trial_duration: 5000,
+  trial_duration: 5000, // Initial duration
   on_load: function() {
-    // Add click event listener to the canvas
-    let canvas = document.querySelector('.jspsych-sketchpad-container canvas');
-    let hasClicked = false;
+    // Get the current trial instance
+    let trial = jsPsych.currentTrial();
     
-    canvas.addEventListener('mousedown', function(e) {
-      // Check if it's left click (button 0) and hasn't clicked before
-      if (e.button === 0 && !hasClicked) {
-        hasClicked = true;
-        // Set trial_duration to null
-        jsPsych.getCurrentTrial().trial_duration = null;
+    // Add an event listener to detect the first drawing interaction
+    let isFirstInput = true;
+    document.querySelector('.jspsych-sketchpad-container').addEventListener('mousedown', function() {
+      if (isFirstInput) {
+        // When the first input is detected, set trial_duration to null
+        trial.trial_duration = null;
+        isFirstInput = false; // Prevent this from triggering again
       }
     });
   },
