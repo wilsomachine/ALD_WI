@@ -468,7 +468,6 @@ var sound_page = {
 // 4. writing / response page
 var writing_page = {
   type: jsPsychSketchpad,
-  trial_duration: null, // Prevent default timing
   prompt: '<p>請寫下剛剛聽到的複合詞</u><br><p>若您聽到了非複合詞則直接畫一個‘x’。</u><br><p>完成按空格鍵繼續。</p>',
   prompt_location: 'abovecanvas',
   canvas_width: 300,
@@ -481,25 +480,27 @@ var writing_page = {
   transparent_background: true,
   background_color: 'rgba(0,0,0,0)',
   choices: " ",
+  trial_duration: null, // Ensure no default jsPsych timer interferes
   on_load: function() {
-    var sketchpad = document.querySelector('.jspsych-sketchpad-container canvas');
+    // Reference the sketchpad canvas
+    const sketchpad = document.querySelector('.jspsych-sketchpad-container canvas');
     if (!sketchpad) {
       console.error('Canvas not found');
       return;
     }
 
-    var timeoutId = setTimeout(function() {
-      jsPsych.finishTrial();
+    // Set up the 5-second timer
+    const timerId = setTimeout(() => {
+      jsPsych.finishTrial(); // End the trial if no input after 5 seconds
     }, 5000);
 
-    function clearTimeoutOnInput() {
-      clearTimeout(timeoutId);
-      sketchpad.removeEventListener('mousedown', clearTimeoutOnInput);
-    }
-
-    sketchpad.addEventListener('mousedown', clearTimeoutOnInput);
+    // Add a click event listener to deactivate the timer on the first click
+    sketchpad.addEventListener('mousedown', () => {
+      clearTimeout(timerId); // Deactivate the timer
+      // No need to remove the listener manually since 'once' handles it
+    }, { once: true }); // Ensures it only triggers on the first click
   },
-  on_finish: function(data){
+  on_finish: function(data) {
     data.screen = "writing_page";
     data.blocknum = blocknum;
     data.trialnum = trialnum;
