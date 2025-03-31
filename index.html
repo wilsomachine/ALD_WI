@@ -14,10 +14,9 @@
     <script src="jsPsych-6.3.1/plugin-survey-multi-choice.js"></script>
     <script src="jsPsych-6.3.1/plugin-survey-text.js"></script>
     <script src="jsPsych-6.3.1/plugin-virtual-chinrest.js"></script>
-    <script src="https://brain2ai.github.io/jsPsychSheet/jspsychsheet.js"></script> 
     <script src="https://unpkg.com/@jspsych/plugin-external-html@1.1.3"></script>
-    <script src="https://unpkg.com/@jspsych/plugin-survey-multi-select@1.1.3"></script>
-    <script src="https://unpkg.com/@jspsych/plugin-sketchpad@1.0.4"></script>
+    <script src="jsPsych-6.3.1/plugin-survey-multi-select.js"></script>
+    <script src="jsPsych-6.3.1/plugin-sketchpad.js"></script>
     <script src="jsPsych-6.3.1/plugin-audio-keyboard-response.js"></script>
     <meta http-equiv='content-Type' content='text/html; charset=utf-8'/>
 
@@ -68,7 +67,7 @@
     
     var C1 = ['audio_file/HM_上子_NW.wav','audio_file/HM_主悲_NW.wav','audio_file/HM_人該_NW.wav','audio_file/HM_伊妹_NW.wav','audio_file/HM_低圓_NW.wav','audio_file/HM_侏黑_NW.wav','audio_file/HM_信劫_NW.wav','audio_file/HM_傳門_NW.wav','audio_file/HM_償家_NW.wav','audio_file/HM_兔德_NW.wav','audio_file/HM_共袍_NW.wav','audio_file/HM_冊愛_NW.wav','audio_file/HM_刊骨_NW.wav','audio_file/HM_句冬_NW.wav','audio_file/HM_哲測_NW.wav','audio_file/HM_下去_Wc.wav','audio_file/HM_主見_Wc.wav','audio_file/HM_二胡_Wc.wav','audio_file/HM_仇人_Wc.wav','audio_file/HM_伸冤_Wc.wav','audio_file/HM_修造_Wc.wav','audio_file/HM_傳說_Wc.wav','audio_file/HM_光束_Wc.wav','audio_file/HM_冒稱_Wc.wav','audio_file/HM_凌虐_Wc.wav','audio_file/HM_出血_Wc.wav','audio_file/HM_前哨_Wc.wav','audio_file/HM_劃定_Wc.wav','audio_file/HM_勾畫_Wc.wav','audio_file/HM_升天_Wc.wav','audio_file/HM_卸責_Wc.wav','audio_file/HM_反串_Wc.wav','audio_file/HM_受賄_Wc.wav','audio_file/HM_吃力_Wc.wav','audio_file/HM_否決_Wc.wav','audio_file/HM_呈閱_Wc.wav','audio_file/HM_品茗_Wc.wav','audio_file/HM_喚醒_Wc.wav','audio_file/HM_嚴父_Wc.wav','audio_file/HM_圓規_Wc.wav','audio_file/HM_坐視_Wc.wav','audio_file/HM_墾地_Wc.wav','audio_file/HM_夥計_Wc.wav','audio_file/HM_大概_Wc.wav','audio_file/HM_奧秘_Wc.wav','audio_file/HM_媲美_Wc.wav','audio_file/HM_完善_Wc.wav','audio_file/HM_審視_Wc.wav','audio_file/HM_審議_Wc.wav','audio_file/HM_小吃_Wc.wav','audio_file/HM_屁股_Wc.wav','audio_file/HM_差人_Wc.wav','audio_file/HM_幸虧_Wc.wav','audio_file/HM_弄權_Wc.wav','audio_file/HM_役使_Wc.wav','audio_file/HM_德行_Wc.wav','audio_file/HM_悠久_Wc.wav','audio_file/HM_感冒_Wc.wav','audio_file/HM_懸空_Wc.wav','audio_file/HM_戰果_Wc.wav','audio_file/HM_扳機_Wc.wav','audio_file/HM_拋掉_Wc.wav','audio_file/HM_按期_Wc.wav','audio_file/HM_接送_Wc.wav','audio_file/HM_提供_Wc.wav','audio_file/HM_撥開_Wc.wav','audio_file/HM_據報_Wc.wav','audio_file/HM_收攬_Wc.wav','audio_file/HM_教練_Wc.wav','audio_file/HM_日前_Wc.wav','audio_file/HM_暗器_Wc.wav','audio_file/JD_審消_NW.wav','audio_file/JD_寵基_NW.wav','audio_file/JD_將務_NW.wav','audio_file/JD_屋電_NW.wav','audio_file/JD_巔光_NW.wav','audio_file/JD_布勢_NW.wav','audio_file/JD_幼書_NW.wav','audio_file/JD_座弟_NW.wav','audio_file/JD_廢學_NW.wav','audio_file/JD_弊浮_NW.wav','audio_file/JD_張爐_NW.wav','audio_file/JD_影金_NW.wav','audio_file/JD_微盤_NW.wav','audio_file/JD_怕侈_NW.wav','audio_file/JD_一切_We.wav','audio_file/JD_乳液_We.wav','audio_file/JD_交稅_We.wav','audio_file/JD_仰頭_We.wav','audio_file/JD_伸腰_We.wav','audio_file/JD_佯裝_We.wav','audio_file/JD_候鳥_We.wav','audio_file/JD_停業_We.wav','audio_file/JD_元寶_We.wav','audio_file/JD_共度_We.wav','audio_file/JD_冰川_We.wav','audio_file/JD_凳子_We.wav','audio_file/JD_列入_We.wav','audio_file/JD_剩菜_We.wav','audio_file/JD_勞力_We.wav','audio_file/JD_匯聚_We.wav','audio_file/JD_南面_We.wav','audio_file/JD_參與_We.wav','audio_file/JD_右臂_We.wav','audio_file/JD_名媛_We.wav','audio_file/JD_吸盤_We.wav','audio_file/JD_呼吸_We.wav','audio_file/JD_唯有_We.wav','audio_file/JD_喬遷_We.wav','audio_file/JD_國王_We.wav','audio_file/JD_在逃_We.wav','audio_file/JD_報仇_We.wav','audio_file/JD_外力_We.wav','audio_file/JD_夢見_We.wav','audio_file/JD_姨母_We.wav','audio_file/JD_學童_We.wav','audio_file/JD_守護_We.wav','audio_file/JD_室友_We.wav','audio_file/JD_寡婦_We.wav','audio_file/JD_就近_We.wav','audio_file/JD_工廠_We.wav','audio_file/JD_工會_We.wav','audio_file/JD_廉價_We.wav','audio_file/JD_彈跳_We.wav','audio_file/JD_得罪_We.wav','audio_file/JD_恭迎_We.wav','audio_file/JD_意向_We.wav','audio_file/JD_慵懶_We.wav','audio_file/JD_戒除_We.wav','audio_file/JD_打仗_We.wav','audio_file/JD_打撈_We.wav','audio_file/JD_拜金_We.wav','audio_file/JD_拮据_We.wav','audio_file/JD_挺胸_We.wav','audio_file/JD_提出_We.wav','audio_file/JD_搭伴_We.wav','audio_file/JD_攤販_We.wav','audio_file/JD_放榜_We.wav','audio_file/JD_放水_We.wav','audio_file/JD_施與_We.wav','audio_file/JD_晚婚_We.wav','audio_file/KS_恥急_NW.wav','audio_file/KS_情壞_NW.wav','audio_file/KS_感下_NW.wav','audio_file/KS_慶妒_NW.wav','audio_file/KS_戰透_NW.wav','audio_file/KS_打行_NW.wav','audio_file/KS_拳逐_NW.wav','audio_file/KS_掉札_NW.wav','audio_file/KS_措價_NW.wav','audio_file/KS_擅然_NW.wav','audio_file/KS_效握_NW.wav','audio_file/KS_標命_NW.wav','audio_file/KS_次識_NW.wav','audio_file/KS_責映_NW.wav','audio_file/KS_一律_Wa.wav','audio_file/KS_不堪_Wa.wav','audio_file/KS_乃至_Wa.wav','audio_file/KS_互相_Wa.wav','audio_file/KS_今晨_Wa.wav','audio_file/KS_佐證_Wa.wav','audio_file/KS_假牙_Wa.wav','audio_file/KS_傷痕_Wa.wav','audio_file/KS_兌換_Wa.wav','audio_file/KS_冤屈_Wa.wav','audio_file/KS_凝望_Wa.wav','audio_file/KS_出訪_Wa.wav','audio_file/KS_分佈_Wa.wav','audio_file/KS_加上_Wa.wav','audio_file/KS_加蓋_Wa.wav','audio_file/KS_包袱_Wa.wav','audio_file/KS_午餐_Wa.wav','audio_file/KS_厚道_Wa.wav','audio_file/KS_叫囂_Wa.wav','audio_file/KS_合聲_Wa.wav','audio_file/KS_含羞_Wa.wav','audio_file/KS_告白_Wa.wav','audio_file/KS_哥哥_Wa.wav','audio_file/KS_喜歡_Wa.wav','audio_file/KS_回響_Wa.wav','audio_file/KS_團契_Wa.wav','audio_file/KS_垂釣_Wa.wav','audio_file/KS_報酬_Wa.wav','audio_file/KS_壁紙_Wa.wav','audio_file/KS_好友_Wa.wav','audio_file/KS_孕育_Wa.wav','audio_file/KS_官僚_Wa.wav','audio_file/KS_富有_Wa.wav','audio_file/KS_實況_Wa.wav','audio_file/KS_小學_Wa.wav','audio_file/KS_少婦_Wa.wav','audio_file/KS_屏息_Wa.wav','audio_file/KS_年青_Wa.wav','audio_file/KS_度假_Wa.wav','audio_file/KS_引證_Wa.wav','audio_file/KS_後人_Wa.wav','audio_file/KS_心境_Wa.wav','audio_file/KS_情況_Wa.wav','audio_file/KS_慘遭_Wa.wav','audio_file/KS_成本_Wa.wav','audio_file/KS_扇形_Wa.wav','audio_file/KS_把玩_Wa.wav','audio_file/KS_抹牆_Wa.wav','audio_file/KS_持筆_Wa.wav','audio_file/KS_探針_Wa.wav','audio_file/KS_提到_Wa.wav','audio_file/KS_撥出_Wa.wav','audio_file/KS_擴建_Wa.wav','audio_file/KS_支點_Wa.wav','audio_file/KS_改正_Wa.wav','audio_file/KS_數位_Wa.wav','audio_file/PC_毒替_NW.wav','audio_file/PC_水定_NW.wav','audio_file/PC_沼迎_NW.wav','audio_file/PC_泛命_NW.wav','audio_file/PC_消爭_NW.wav','audio_file/PC_源教_NW.wav','audio_file/PC_潤入_NW.wav','audio_file/PC_烏公_NW.wav','audio_file/PC_熔人_NW.wav','audio_file/PC_爭招_NW.wav','audio_file/PC_物這_NW.wav','audio_file/PC_琴拖_NW.wav','audio_file/PC_芳傘_NW.wav','audio_file/PC_處馬_NW.wav','audio_file/PC_下顎_Wd.wav','audio_file/PC_之中_Wd.wav','audio_file/PC_之後_Wd.wav','audio_file/PC_五樓_Wd.wav','audio_file/PC_他殺_Wd.wav','audio_file/PC_佩帶_Wd.wav','audio_file/PC_修煉_Wd.wav','audio_file/PC_停下_Wd.wav','audio_file/PC_僅見_Wd.wav','audio_file/PC_公頃_Wd.wav','audio_file/PC_冰刀_Wd.wav','audio_file/PC_分段_Wd.wav','audio_file/PC_切口_Wd.wav','audio_file/PC_剪掉_Wd.wav','audio_file/PC_北極_Wd.wav','audio_file/PC_半生_Wd.wav','audio_file/PC_原罪_Wd.wav','audio_file/PC_原藉_Wd.wav','audio_file/PC_受禮_Wd.wav','audio_file/PC_台端_Wd.wav','audio_file/PC_同樣_Wd.wav','audio_file/PC_吵架_Wd.wav','audio_file/PC_周遭_Wd.wav','audio_file/PC_哨崗_Wd.wav','audio_file/PC_喧譁_Wd.wav','audio_file/PC_困擾_Wd.wav','audio_file/PC_土產_Wd.wav','audio_file/PC_壓倒_Wd.wav','audio_file/PC_壓痛_Wd.wav','audio_file/PC_天庭_Wd.wav','audio_file/PC_字帖_Wd.wav','audio_file/PC_字音_Wd.wav','audio_file/PC_定論_Wd.wav','audio_file/PC_射擊_Wd.wav','audio_file/PC_少校_Wd.wav','audio_file/PC_尖端_Wd.wav','audio_file/PC_展望_Wd.wav','audio_file/PC_引路_Wd.wav','audio_file/PC_強硬_Wd.wav','audio_file/PC_徒然_Wd.wav','audio_file/PC_志趣_Wd.wav','audio_file/PC_想念_Wd.wav','audio_file/PC_慣用_Wd.wav','audio_file/PC_我方_Wd.wav','audio_file/PC_才識_Wd.wav','audio_file/PC_扭腰_Wd.wav','audio_file/PC_拋開_Wd.wav','audio_file/PC_拜讀_Wd.wav','audio_file/PC_按例_Wd.wav','audio_file/PC_搬運_Wd.wav','audio_file/PC_撿取_Wd.wav','audio_file/PC_擺出_Wd.wav','audio_file/PC_攻破_Wd.wav','audio_file/PC_文筆_Wd.wav','audio_file/PC_方針_Wd.wav','audio_file/WY_談形_NW.wav','audio_file/WY_開堅_NW.wav','audio_file/WY_院等_NW.wav','audio_file/WY_隨禿_NW.wav','audio_file/WY_雨形_NW.wav','audio_file/WY_靠操_NW.wav','audio_file/WY_音雞_NW.wav','audio_file/WY_預瓜_NW.wav','audio_file/WY_風春_NW.wav','audio_file/WY_饞驀_NW.wav','audio_file/WY_騙瓜_NW.wav','audio_file/WY_鬼白_NW.wav','audio_file/WY_黃略_NW.wav','audio_file/WY_不安_Wb.wav','audio_file/WY_串騙_Wb.wav','audio_file/WY_人群_Wb.wav','audio_file/WY_伏法_Wb.wav','audio_file/WY_使得_Wb.wav','audio_file/WY_保衛_Wb.wav','audio_file/WY_倦容_Wb.wav','audio_file/WY_傢伙_Wb.wav','audio_file/WY_先前_Wb.wav','audio_file/WY_典押_Wb.wav','audio_file/WY_冷宮_Wb.wav','audio_file/WY_列隊_Wb.wav','audio_file/WY_刪除_Wb.wav','audio_file/WY_剷平_Wb.wav','audio_file/WY_勸誨_Wb.wav','audio_file/WY_區別_Wb.wav','audio_file/WY_博學_Wb.wav','audio_file/WY_叉腰_Wb.wav','audio_file/WY_反派_Wb.wav','audio_file/WY_古語_Wb.wav','audio_file/WY_司儀_Wb.wav','audio_file/WY_吞服_Wb.wav','audio_file/WY_吹風_Wb.wav','audio_file/WY_咽氣_Wb.wav','audio_file/WY_問起_Wb.wav','audio_file/WY_嘗試_Wb.wav','audio_file/WY_圍牆_Wb.wav','audio_file/WY_地基_Wb.wav','audio_file/WY_夢到_Wb.wav','audio_file/WY_大旱_Wb.wav','audio_file/WY_奉還_Wb.wav','audio_file/WY_守則_Wb.wav','audio_file/WY_宿主_Wb.wav','audio_file/WY_實幹_Wb.wav','audio_file/WY_局限_Wb.wav','audio_file/WY_巧合_Wb.wav','audio_file/WY_差勁_Wb.wav','audio_file/WY_平方_Wb.wav','audio_file/WY_建議_Wb.wav','audio_file/WY_彌補_Wb.wav','audio_file/WY_復審_Wb.wav','audio_file/WY_悄悄_Wb.wav','audio_file/WY_愛心_Wb.wav','audio_file/WY_懂得_Wb.wav','audio_file/WY_截流_Wb.wav','audio_file/WY_拉車_Wb.wav','audio_file/WY_拼湊_Wb.wav','audio_file/WY_捕拿_Wb.wav','audio_file/WY_探長_Wb.wav','audio_file/WY_摟抱_Wb.wav','audio_file/WY_撇清_Wb.wav','audio_file/WY_操練_Wb.wav','audio_file/WY_故友_Wb.wav','audio_file/WY_教養_Wb.wav','audio_file/WY_斜視_Wb.wav'
 ]
-/*var C1 = ['audio_file/HM_上子_NW.wav']*/
+//var C1 = ['audio_file/HM_下去_Wc.wav']
     /*var C2 = ['audio_file/受賄_word.wav', 'audio_file/周遭_word.wav', 
     'audio_file/呼吸_word.wav', 
     'audio_file/奉還_word.wav', 'audio_file/官僚_word.wav', 
@@ -88,28 +87,10 @@
 
     var E1 = ['audio_file/HM_上子_NW.wav','audio_file/HM_主悲_NW.wav','audio_file/HM_人該_NW.wav','audio_file/HM_伊妹_NW.wav','audio_file/HM_低圓_NW.wav','audio_file/HM_侏黑_NW.wav','audio_file/HM_信劫_NW.wav','audio_file/HM_傳門_NW.wav','audio_file/HM_償家_NW.wav','audio_file/HM_兔德_NW.wav','audio_file/HM_共袍_NW.wav','audio_file/HM_冊愛_NW.wav','audio_file/HM_刊骨_NW.wav','audio_file/HM_句冬_NW.wav','audio_file/HM_哲測_NW.wav','audio_file/HM_一律_Wa.wav','audio_file/HM_主審_Wa.wav','audio_file/HM_乃至_Wa.wav','audio_file/HM_互相_Wa.wav','audio_file/HM_今晨_Wa.wav','audio_file/HM_保健_Wa.wav','audio_file/HM_傷痕_Wa.wav','audio_file/HM_兌換_Wa.wav','audio_file/HM_冤屈_Wa.wav','audio_file/HM_凝望_Wa.wav','audio_file/HM_出訪_Wa.wav','audio_file/HM_分佈_Wa.wav','audio_file/HM_加上_Wa.wav','audio_file/HM_加蓋_Wa.wav','audio_file/HM_包袱_Wa.wav','audio_file/HM_午餐_Wa.wav','audio_file/HM_厚道_Wa.wav','audio_file/HM_取回_Wa.wav','audio_file/HM_合聲_Wa.wav','audio_file/HM_含羞_Wa.wav','audio_file/HM_告白_Wa.wav','audio_file/HM_哥哥_Wa.wav','audio_file/HM_喜歡_Wa.wav','audio_file/HM_回響_Wa.wav','audio_file/HM_團契_Wa.wav','audio_file/HM_垂釣_Wa.wav','audio_file/HM_報酬_Wa.wav','audio_file/HM_壁紙_Wa.wav','audio_file/HM_大哥_Wa.wav','audio_file/HM_好友_Wa.wav','audio_file/HM_孕育_Wa.wav','audio_file/HM_官僚_Wa.wav','audio_file/HM_實況_Wa.wav','audio_file/HM_封面_Wa.wav','audio_file/HM_小學_Wa.wav','audio_file/HM_少婦_Wa.wav','audio_file/HM_屏息_Wa.wav','audio_file/HM_年青_Wa.wav','audio_file/HM_度假_Wa.wav','audio_file/HM_引證_Wa.wav','audio_file/HM_後人_Wa.wav','audio_file/HM_心境_Wa.wav','audio_file/HM_情況_Wa.wav','audio_file/HM_慘遭_Wa.wav','audio_file/HM_成本_Wa.wav','audio_file/HM_扇形_Wa.wav','audio_file/HM_把玩_Wa.wav','audio_file/HM_拒繳_Wa.wav','audio_file/HM_排名_Wa.wav','audio_file/HM_探針_Wa.wav','audio_file/HM_揮鞭_Wa.wav','audio_file/HM_撥出_Wa.wav','audio_file/HM_擴建_Wa.wav','audio_file/HM_支點_Wa.wav','audio_file/HM_數位_Wa.wav','audio_file/HM_斤兩_Wa.wav','audio_file/JD_審消_NW.wav','audio_file/JD_寵基_NW.wav','audio_file/JD_將務_NW.wav','audio_file/JD_屋電_NW.wav','audio_file/JD_巔光_NW.wav','audio_file/JD_布勢_NW.wav','audio_file/JD_幼書_NW.wav','audio_file/JD_座弟_NW.wav','audio_file/JD_廢學_NW.wav','audio_file/JD_弊浮_NW.wav','audio_file/JD_張爐_NW.wav','audio_file/JD_影金_NW.wav','audio_file/JD_微盤_NW.wav','audio_file/JD_怕侈_NW.wav','audio_file/JD_下去_Wc.wav','audio_file/JD_二胡_Wc.wav','audio_file/JD_仇人_Wc.wav','audio_file/JD_伸冤_Wc.wav','audio_file/JD_依傍_Wc.wav','audio_file/JD_修造_Wc.wav','audio_file/JD_傳說_Wc.wav','audio_file/JD_光束_Wc.wav','audio_file/JD_冒稱_Wc.wav','audio_file/JD_凌虐_Wc.wav','audio_file/JD_出血_Wc.wav','audio_file/JD_前哨_Wc.wav','audio_file/JD_劃定_Wc.wav','audio_file/JD_勾畫_Wc.wav','audio_file/JD_升天_Wc.wav','audio_file/JD_卸責_Wc.wav','audio_file/JD_反串_Wc.wav','audio_file/JD_另外_Wc.wav','audio_file/JD_否決_Wc.wav','audio_file/JD_呈閱_Wc.wav','audio_file/JD_品茗_Wc.wav','audio_file/JD_喚醒_Wc.wav','audio_file/JD_嚴父_Wc.wav','audio_file/JD_圓規_Wc.wav','audio_file/JD_坐視_Wc.wav','audio_file/JD_墾地_Wc.wav','audio_file/JD_夥計_Wc.wav','audio_file/JD_大概_Wc.wav','audio_file/JD_天體_Wc.wav','audio_file/JD_媲美_Wc.wav','audio_file/JD_完善_Wc.wav','audio_file/JD_密實_Wc.wav','audio_file/JD_審視_Wc.wav','audio_file/JD_審議_Wc.wav','audio_file/JD_屁股_Wc.wav','audio_file/JD_差人_Wc.wav','audio_file/JD_平地_Wc.wav','audio_file/JD_弄權_Wc.wav','audio_file/JD_役使_Wc.wav','audio_file/JD_德行_Wc.wav','audio_file/JD_悠久_Wc.wav','audio_file/JD_感冒_Wc.wav','audio_file/JD_懸空_Wc.wav','audio_file/JD_戰果_Wc.wav','audio_file/JD_扳機_Wc.wav','audio_file/JD_投遞_Wc.wav','audio_file/JD_拾起_Wc.wav','audio_file/JD_按期_Wc.wav','audio_file/JD_接送_Wc.wav','audio_file/JD_撇掉_Wc.wav','audio_file/JD_撥開_Wc.wav','audio_file/JD_收攬_Wc.wav','audio_file/JD_教練_Wc.wav','audio_file/JD_斟酒_Wc.wav','audio_file/JD_暗器_Wc.wav','audio_file/JD_暫別_Wc.wav','audio_file/KS_恥急_NW.wav','audio_file/KS_情壞_NW.wav','audio_file/KS_感下_NW.wav','audio_file/KS_慶妒_NW.wav','audio_file/KS_戰透_NW.wav','audio_file/KS_打行_NW.wav','audio_file/KS_拳逐_NW.wav','audio_file/KS_掉札_NW.wav','audio_file/KS_措價_NW.wav','audio_file/KS_擅然_NW.wav','audio_file/KS_效握_NW.wav','audio_file/KS_標命_NW.wav','audio_file/KS_次識_NW.wav','audio_file/KS_責映_NW.wav','audio_file/KS_上衣_Wd.wav','audio_file/KS_丫頭_Wd.wav','audio_file/KS_之中_Wd.wav','audio_file/KS_之後_Wd.wav','audio_file/KS_五樓_Wd.wav','audio_file/KS_他殺_Wd.wav','audio_file/KS_修煉_Wd.wav','audio_file/KS_停下_Wd.wav','audio_file/KS_僅見_Wd.wav','audio_file/KS_公頃_Wd.wav','audio_file/KS_冰刀_Wd.wav','audio_file/KS_凝聚_Wd.wav','audio_file/KS_分段_Wd.wav','audio_file/KS_剪掉_Wd.wav','audio_file/KS_勒住_Wd.wav','audio_file/KS_北極_Wd.wav','audio_file/KS_半生_Wd.wav','audio_file/KS_原罪_Wd.wav','audio_file/KS_受禮_Wd.wav','audio_file/KS_台端_Wd.wav','audio_file/KS_同樣_Wd.wav','audio_file/KS_吵架_Wd.wav','audio_file/KS_周遭_Wd.wav','audio_file/KS_哨崗_Wd.wav','audio_file/KS_喧譁_Wd.wav','audio_file/KS_困擾_Wd.wav','audio_file/KS_土產_Wd.wav','audio_file/KS_執照_Wd.wav','audio_file/KS_壓倒_Wd.wav','audio_file/KS_好動_Wd.wav','audio_file/KS_字帖_Wd.wav','audio_file/KS_字音_Wd.wav','audio_file/KS_定論_Wd.wav','audio_file/KS_寒酸_Wd.wav','audio_file/KS_少將_Wd.wav','audio_file/KS_少校_Wd.wav','audio_file/KS_尖端_Wd.wav','audio_file/KS_座標_Wd.wav','audio_file/KS_引路_Wd.wav','audio_file/KS_強硬_Wd.wav','audio_file/KS_徒然_Wd.wav','audio_file/KS_志趣_Wd.wav','audio_file/KS_想念_Wd.wav','audio_file/KS_慣用_Wd.wav','audio_file/KS_我方_Wd.wav','audio_file/KS_才識_Wd.wav','audio_file/KS_扭腰_Wd.wav','audio_file/KS_投訴_Wd.wav','audio_file/KS_拜讀_Wd.wav','audio_file/KS_掛上_Wd.wav','audio_file/KS_接種_Wd.wav','audio_file/KS_撿取_Wd.wav','audio_file/KS_擺出_Wd.wav','audio_file/KS_收獲_Wd.wav','audio_file/KS_攻破_Wd.wav','audio_file/KS_文筆_Wd.wav','audio_file/PC_毒替_NW.wav','audio_file/PC_水定_NW.wav','audio_file/PC_沼迎_NW.wav','audio_file/PC_泛命_NW.wav','audio_file/PC_消爭_NW.wav','audio_file/PC_源教_NW.wav','audio_file/PC_潤入_NW.wav','audio_file/PC_烏公_NW.wav','audio_file/PC_熔人_NW.wav','audio_file/PC_爭招_NW.wav','audio_file/PC_物這_NW.wav','audio_file/PC_琴拖_NW.wav','audio_file/PC_芳傘_NW.wav','audio_file/PC_處馬_NW.wav','audio_file/PC_不同_Wb.wav','audio_file/PC_串騙_Wb.wav','audio_file/PC_了結_Wb.wav','audio_file/PC_人群_Wb.wav','audio_file/PC_伏法_Wb.wav','audio_file/PC_使得_Wb.wav','audio_file/PC_保衛_Wb.wav','audio_file/PC_倦容_Wb.wav','audio_file/PC_傢伙_Wb.wav','audio_file/PC_先前_Wb.wav','audio_file/PC_典押_Wb.wav','audio_file/PC_凹處_Wb.wav','audio_file/PC_列隊_Wb.wav','audio_file/PC_刪除_Wb.wav','audio_file/PC_勸誨_Wb.wav','audio_file/PC_區別_Wb.wav','audio_file/PC_博學_Wb.wav','audio_file/PC_參觀_Wb.wav','audio_file/PC_叉腰_Wb.wav','audio_file/PC_反派_Wb.wav','audio_file/PC_古語_Wb.wav','audio_file/PC_司儀_Wb.wav','audio_file/PC_吞服_Wb.wav','audio_file/PC_吹風_Wb.wav','audio_file/PC_咽氣_Wb.wav','audio_file/PC_問起_Wb.wav','audio_file/PC_嘗試_Wb.wav','audio_file/PC_地基_Wb.wav','audio_file/PC_墓誌_Wb.wav','audio_file/PC_夢到_Wb.wav','audio_file/PC_奉還_Wb.wav','audio_file/PC_婚宴_Wb.wav','audio_file/PC_守則_Wb.wav','audio_file/PC_實幹_Wb.wav','audio_file/PC_對質_Wb.wav','audio_file/PC_局限_Wb.wav','audio_file/PC_巧合_Wb.wav','audio_file/PC_年度_Wb.wav','audio_file/PC_建議_Wb.wav','audio_file/PC_彌補_Wb.wav','audio_file/PC_復審_Wb.wav','audio_file/PC_悄悄_Wb.wav','audio_file/PC_愛心_Wb.wav','audio_file/PC_懂得_Wb.wav','audio_file/PC_截流_Wb.wav','audio_file/PC_扭曲_Wb.wav','audio_file/PC_拼命_Wb.wav','audio_file/PC_拼湊_Wb.wav','audio_file/PC_捕拿_Wb.wav','audio_file/PC_摟抱_Wb.wav','audio_file/PC_撇清_Wb.wav','audio_file/PC_操練_Wb.wav','audio_file/PC_故友_Wb.wav','audio_file/PC_教養_Wb.wav','audio_file/PC_斜視_Wb.wav','audio_file/WY_談形_NW.wav','audio_file/WY_開堅_NW.wav','audio_file/WY_院等_NW.wav','audio_file/WY_隨禿_NW.wav','audio_file/WY_雨形_NW.wav','audio_file/WY_靠操_NW.wav','audio_file/WY_音雞_NW.wav','audio_file/WY_預瓜_NW.wav','audio_file/WY_風春_NW.wav','audio_file/WY_饞驀_NW.wav','audio_file/WY_騙瓜_NW.wav','audio_file/WY_鬼白_NW.wav','audio_file/WY_黃略_NW.wav','audio_file/WY_下等_We.wav','audio_file/WY_乳液_We.wav','audio_file/WY_仰頭_We.wav','audio_file/WY_伸腰_We.wav','audio_file/WY_佯裝_We.wav','audio_file/WY_修飾_We.wav','audio_file/WY_候鳥_We.wav','audio_file/WY_停業_We.wav','audio_file/WY_元寶_We.wav','audio_file/WY_共度_We.wav','audio_file/WY_冰川_We.wav','audio_file/WY_切磋_We.wav','audio_file/WY_列入_We.wav','audio_file/WY_剩菜_We.wav','audio_file/WY_勞力_We.wav','audio_file/WY_匯聚_We.wav','audio_file/WY_南面_We.wav','audio_file/WY_參與_We.wav','audio_file/WY_口德_We.wav','audio_file/WY_右臂_We.wav','audio_file/WY_名媛_We.wav','audio_file/WY_吸盤_We.wav','audio_file/WY_呼吸_We.wav','audio_file/WY_唯有_We.wav','audio_file/WY_喬遷_We.wav','audio_file/WY_國王_We.wav','audio_file/WY_在逃_We.wav','audio_file/WY_報仇_We.wav','audio_file/WY_夢見_We.wav','audio_file/WY_失身_We.wav','audio_file/WY_姨母_We.wav','audio_file/WY_守護_We.wav','audio_file/WY_室友_We.wav','audio_file/WY_寡婦_We.wav','audio_file/WY_工廠_We.wav','audio_file/WY_工會_We.wav','audio_file/WY_差餉_We.wav','audio_file/WY_平反_We.wav','audio_file/WY_彈跳_We.wav','audio_file/WY_得罪_We.wav','audio_file/WY_恭迎_We.wav','audio_file/WY_意向_We.wav','audio_file/WY_慵懶_We.wav','audio_file/WY_戒除_We.wav','audio_file/WY_打仗_We.wav','audio_file/WY_拜金_We.wav','audio_file/WY_拼貼_We.wav','audio_file/WY_挺胸_We.wav','audio_file/WY_探親_We.wav','audio_file/WY_搭伴_We.wav','audio_file/WY_擊倒_We.wav','audio_file/WY_攤販_We.wav','audio_file/WY_放水_We.wav','audio_file/WY_斗膽_We.wav','audio_file/WY_施與_We.wav'
 ]
-/*var E1 = ['audio_file/HM_上子_NW.wav']*/
     var E2 = ['audio_file/HM_不師_NW.wav','audio_file/HM_乳費_NW.wav','audio_file/HM_仔府_NW.wav','audio_file/HM_伯眉_NW.wav','audio_file/HM_使目_NW.wav','audio_file/HM_便隻_NW.wav','audio_file/HM_倦道_NW.wav','audio_file/HM_傷火_NW.wav','audio_file/HM_儷陣_NW.wav','audio_file/HM_內失_NW.wav','audio_file/HM_兵反_NW.wav','audio_file/HM_冒壓_NW.wav','audio_file/HM_判肉_NW.wav','audio_file/HM_吝團_NW.wav','audio_file/HM_星河_Wa.wav','audio_file/HM_村政_Wa.wav','audio_file/HM_棉褲_Wa.wav','audio_file/HM_椰子_Wa.wav','audio_file/HM_樣板_Wa.wav','audio_file/HM_毛豆_Wa.wav','audio_file/HM_氣味_Wa.wav','audio_file/HM_決堤_Wa.wav','audio_file/HM_注釋_Wa.wav','audio_file/HM_流血_Wa.wav','audio_file/HM_淋濕_Wa.wav','audio_file/HM_清償_Wa.wav','audio_file/HM_湧入_Wa.wav','audio_file/HM_濃烈_Wa.wav','audio_file/HM_濃茶_Wa.wav','audio_file/HM_烘乾_Wa.wav','audio_file/HM_照射_Wa.wav','audio_file/HM_特賣_Wa.wav','audio_file/HM_瓶頸_Wa.wav','audio_file/HM_生火_Wa.wav','audio_file/HM_界定_Wa.wav','audio_file/HM_畫廊_Wa.wav','audio_file/HM_白天_Wa.wav','audio_file/HM_矮小_Wa.wav','audio_file/HM_碎肉_Wa.wav','audio_file/HM_磨損_Wa.wav','audio_file/HM_禮俗_Wa.wav','audio_file/HM_禮拜_Wa.wav','audio_file/HM_秘書_Wa.wav','audio_file/HM_端莊_Wa.wav','audio_file/HM_簡短_Wa.wav','audio_file/HM_精緻_Wa.wav','audio_file/HM_糾集_Wa.wav','audio_file/HM_紅艷_Wa.wav','audio_file/HM_綻放_Wa.wav','audio_file/HM_繁衍_Wa.wav','audio_file/HM_繪出_Wa.wav','audio_file/HM_耳膜_Wa.wav','audio_file/HM_腹痛_Wa.wav','audio_file/HM_自備_Wa.wav','audio_file/HM_航向_Wa.wav','audio_file/HM_草堆_Wa.wav','audio_file/HM_蒼涼_Wa.wav','audio_file/HM_行情_Wa.wav','audio_file/HM_裁決_Wa.wav','audio_file/HM_訂正_Wa.wav','audio_file/HM_記敍_Wa.wav','audio_file/HM_試演_Wa.wav','audio_file/HM_謎面_Wa.wav','audio_file/HM_豈止_Wa.wav','audio_file/HM_買下_Wa.wav','audio_file/HM_賣藝_Wa.wav','audio_file/HM_賬面_Wa.wav','audio_file/HM_踢倒_Wa.wav','audio_file/HM_軍官_Wa.wav','audio_file/HM_輕重_Wa.wav','audio_file/JD_官決_NW.wav','audio_file/JD_寬抗_NW.wav','audio_file/JD_寶車_NW.wav','audio_file/JD_專動_NW.wav','audio_file/JD_山徵_NW.wav','audio_file/JD_川停_NW.wav','audio_file/JD_幕酒_NW.wav','audio_file/JD_店搭_NW.wav','audio_file/JD_庭施_NW.wav','audio_file/JD_延峭_NW.wav','audio_file/JD_引觀_NW.wav','audio_file/JD_強視_NW.wav','audio_file/JD_律會_NW.wav','audio_file/JD_志給_NW.wav','audio_file/JD_木料_Wc.wav','audio_file/JD_柑桔_Wc.wav','audio_file/JD_根底_Wc.wav','audio_file/JD_標榜_Wc.wav','audio_file/JD_檢舉_Wc.wav','audio_file/JD_氣概_Wc.wav','audio_file/JD_氣餒_Wc.wav','audio_file/JD_泡湯_Wc.wav','audio_file/JD_浪漫_Wc.wav','audio_file/JD_涼快_Wc.wav','audio_file/JD_清場_Wc.wav','audio_file/JD_清點_Wc.wav','audio_file/JD_渺茫_Wc.wav','audio_file/JD_澆花_Wc.wav','audio_file/JD_炒買_Wc.wav','audio_file/JD_煎藥_Wc.wav','audio_file/JD_燒炭_Wc.wav','audio_file/JD_牢獄_Wc.wav','audio_file/JD_猛然_Wc.wav','audio_file/JD_環狀_Wc.wav','audio_file/JD_男裝_Wc.wav','audio_file/JD_異動_Wc.wav','audio_file/JD_發球_Wc.wav','audio_file/JD_知己_Wc.wav','audio_file/JD_硬性_Wc.wav','audio_file/JD_人數_Wc.wav','audio_file/JD_神情_Wc.wav','audio_file/JD_福星_Wc.wav','audio_file/JD_秘密_Wc.wav','audio_file/JD_稱謝_Wc.wav','audio_file/JD_竭力_Wc.wav','audio_file/JD_籌募_Wc.wav','audio_file/JD_精巧_Wc.wav','audio_file/JD_索命_Wc.wav','audio_file/JD_絲棉_Wc.wav','audio_file/JD_繁星_Wc.wav','audio_file/JD_美滿_Wc.wav','audio_file/JD_耍鬧_Wc.wav','audio_file/JD_胎教_Wc.wav','audio_file/JD_臉盆_Wc.wav','audio_file/JD_花樣_Wc.wav','audio_file/JD_落筆_Wc.wav','audio_file/JD_蒐集_Wc.wav','audio_file/JD_行使_Wc.wav','audio_file/JD_補助_Wc.wav','audio_file/JD_訂下_Wc.wav','audio_file/JD_評判_Wc.wav','audio_file/JD_語意_Wc.wav','audio_file/JD_諮議_Wc.wav','audio_file/JD_變好_Wc.wav','audio_file/JD_買賣_Wc.wav','audio_file/JD_賣帳_Wc.wav','audio_file/JD_赤子_Wc.wav','audio_file/JD_車夫_Wc.wav','audio_file/JD_軍餉_Wc.wav','audio_file/KS_急海_NW.wav','audio_file/KS_悟顏_NW.wav','audio_file/KS_惠全_NW.wav','audio_file/KS_慢節_NW.wav','audio_file/KS_應步_NW.wav','audio_file/KS_戲是_NW.wav','audio_file/KS_技艷_NW.wav','audio_file/KS_指葉_NW.wav','audio_file/KS_掉遊_NW.wav','audio_file/KS_援煎_NW.wav','audio_file/KS_擊婚_NW.wav','audio_file/KS_敘指_NW.wav','audio_file/KS_樸炸_NW.wav','audio_file/KS_死停_NW.wav','audio_file/KS_是否_Wd.wav','audio_file/KS_暗自_Wd.wav','audio_file/KS_替代_Wd.wav','audio_file/KS_東邊_Wd.wav','audio_file/KS_校外_Wd.wav','audio_file/KS_極大_Wd.wav','audio_file/KS_樹幹_Wd.wav','audio_file/KS_沙包_Wd.wav','audio_file/KS_泡菜_Wd.wav','audio_file/KS_洪流_Wd.wav','audio_file/KS_海棠_Wd.wav','audio_file/KS_淒楚_Wd.wav','audio_file/KS_溫情_Wd.wav','audio_file/KS_濫情_Wd.wav','audio_file/KS_無私_Wd.wav','audio_file/KS_蒸飯_Wd.wav','audio_file/KS_熱量_Wd.wav','audio_file/KS_爐台_Wd.wav','audio_file/KS_牽動_Wd.wav','audio_file/KS_生活_Wd.wav','audio_file/KS_留級_Wd.wav','audio_file/KS_疑難_Wd.wav','audio_file/KS_白眼_Wd.wav','audio_file/KS_盛傳_Wd.wav','audio_file/KS_眉頭_Wd.wav','audio_file/KS_石蠟_Wd.wav','audio_file/KS_碘酒_Wd.wav','audio_file/KS_私話_Wd.wav','audio_file/KS_租期_Wd.wav','audio_file/KS_穿插_Wd.wav','audio_file/KS_筆觸_Wd.wav','audio_file/KS_簽名_Wd.wav','audio_file/KS_紅梅_Wd.wav','audio_file/KS_紹酒_Wd.wav','audio_file/KS_續弦_Wd.wav','audio_file/KS_續篇_Wd.wav','audio_file/KS_續聘_Wd.wav','audio_file/KS_義子_Wd.wav','audio_file/KS_膠水_Wd.wav','audio_file/KS_自燃_Wd.wav','audio_file/KS_致詞_Wd.wav','audio_file/KS_菜圃_Wd.wav','audio_file/KS_藏拙_Wd.wav','audio_file/KS_衝破_Wd.wav','audio_file/KS_補上_Wd.wav','audio_file/KS_評核_Wd.wav','audio_file/KS_認識_Wd.wav','audio_file/KS_誘餌_Wd.wav','audio_file/KS_誦讀_Wd.wav','audio_file/KS_謹慎_Wd.wav','audio_file/KS_貞節_Wd.wav','audio_file/KS_賭錢_Wd.wav','audio_file/KS_贖身_Wd.wav','audio_file/KS_超收_Wd.wav','audio_file/KS_身亡_Wd.wav','audio_file/PC_毫壁_NW.wav','audio_file/PC_求倒_NW.wav','audio_file/PC_況照_NW.wav','audio_file/PC_泡重_NW.wav','audio_file/PC_深罷_NW.wav','audio_file/PC_滅截_NW.wav','audio_file/PC_火呼_NW.wav','audio_file/PC_然粉_NW.wav','audio_file/PC_熟反_NW.wav','audio_file/PC_片罪_NW.wav','audio_file/PC_犯位_NW.wav','audio_file/PC_脈就_NW.wav','audio_file/PC_菠村_NW.wav','audio_file/PC_號繞_NW.wav','audio_file/PC_族人_Wb.wav','audio_file/PC_暢通_Wb.wav','audio_file/PC_枯木_Wb.wav','audio_file/PC_核稿_Wb.wav','audio_file/PC_極為_Wb.wav','audio_file/PC_槍桿_Wb.wav','audio_file/PC_橙色_Wb.wav','audio_file/PC_機密_Wb.wav','audio_file/PC_氣結_Wb.wav','audio_file/PC_水藻_Wb.wav','audio_file/PC_流動_Wb.wav','audio_file/PC_海馬_Wb.wav','audio_file/PC_液態_Wb.wav','audio_file/PC_淫棍_Wb.wav','audio_file/PC_港幣_Wb.wav','audio_file/PC_災民_Wb.wav','audio_file/PC_煮成_Wb.wav','audio_file/PC_燈籠_Wb.wav','audio_file/PC_片語_Wb.wav','audio_file/PC_狂歡_Wb.wav','audio_file/PC_猛跑_Wb.wav','audio_file/PC_田徑_Wb.wav','audio_file/PC_略加_Wb.wav','audio_file/PC_瘟病_Wb.wav','audio_file/PC_盛湯_Wb.wav','audio_file/PC_盡力_Wb.wav','audio_file/PC_瞄準_Wb.wav','audio_file/PC_砸死_Wb.wav','audio_file/PC_確信_Wb.wav','audio_file/PC_視力_Wb.wav','audio_file/PC_科學_Wb.wav','audio_file/PC_稟告_Wb.wav','audio_file/PC_童謠_Wb.wav','audio_file/PC_算術_Wb.wav','audio_file/PC_紗窗_Wb.wav','audio_file/PC_細瓷_Wb.wav','audio_file/PC_績分_Wb.wav','audio_file/PC_罰則_Wb.wav','audio_file/PC_老少_Wb.wav','audio_file/PC_肚臍_Wb.wav','audio_file/PC_臂章_Wb.wav','audio_file/PC_自述_Wb.wav','audio_file/PC_航行_Wb.wav','audio_file/PC_苛責_Wb.wav','audio_file/PC_蟹粉_Wb.wav','audio_file/PC_衣袋_Wb.wav','audio_file/PC_解悶_Wb.wav','audio_file/PC_詆毀_Wb.wav','audio_file/PC_誘導_Wb.wav','audio_file/PC_論定_Wb.wav','audio_file/PC_議題_Wb.wav','audio_file/PC_負荷_Wb.wav','audio_file/PC_賢慧_Wb.wav','audio_file/PC_贖罪_Wb.wav','audio_file/PC_超脫_Wb.wav','audio_file/PC_跳牆_Wb.wav','audio_file/WY_謀姪_NW.wav','audio_file/WY_賬邃_NW.wav','audio_file/WY_間失_NW.wav','audio_file/WY_除項_NW.wav','audio_file/WY_雜住_NW.wav','audio_file/WY_需攬_NW.wav','audio_file/WY_面地_NW.wav','audio_file/WY_頂名_NW.wav','audio_file/WY_頓精_NW.wav','audio_file/WY_餘露_NW.wav','audio_file/WY_香鋁_NW.wav','audio_file/WY_驕鷗_NW.wav','audio_file/WY_魚崩_NW.wav','audio_file/WY_墨眾_NW.wav','audio_file/WY_晚婚_We.wav','audio_file/WY_更為_We.wav','audio_file/WY_東面_We.wav','audio_file/WY_果核_We.wav','audio_file/WY_核子_We.wav','audio_file/WY_標記_We.wav','audio_file/WY_橙汁_We.wav','audio_file/WY_歷練_We.wav','audio_file/WY_氣候_We.wav','audio_file/WY_派駐_We.wav','audio_file/WY_流失_We.wav','audio_file/WY_浸軟_We.wav','audio_file/WY_測度_We.wav','audio_file/WY_滅絕_We.wav','audio_file/WY_火候_We.wav','audio_file/WY_焦點_We.wav','audio_file/WY_熱水_We.wav','audio_file/WY_父子_We.wav','audio_file/WY_牽線_We.wav','audio_file/WY_犯人_We.wav','audio_file/WY_現年_We.wav','audio_file/WY_產婦_We.wav','audio_file/WY_畢竟_We.wav','audio_file/WY_盛名_We.wav','audio_file/WY_盟國_We.wav','audio_file/WY_眾多_We.wav','audio_file/WY_砂石_We.wav','audio_file/WY_磁場_We.wav','audio_file/WY_祭文_We.wav','audio_file/WY_秋風_We.wav','audio_file/WY_移動_We.wav','audio_file/WY_立志_We.wav','audio_file/WY_答酬_We.wav','audio_file/WY_籌借_We.wav','audio_file/WY_純金_We.wav','audio_file/WY_終局_We.wav','audio_file/WY_總賬_We.wav','audio_file/WY_翻滾_We.wav','audio_file/WY_老爹_We.wav','audio_file/WY_聽力_We.wav','audio_file/WY_舅父_We.wav','audio_file/WY_舊詩_We.wav','audio_file/WY_花托_We.wav','audio_file/WY_藝妓_We.wav','audio_file/WY_行徑_We.wav','audio_file/WY_衣履_We.wav','audio_file/WY_要點_We.wav','audio_file/WY_誓願_We.wav','audio_file/WY_調解_We.wav','audio_file/WY_警車_We.wav','audio_file/WY_負擔_We.wav','audio_file/WY_賊性_We.wav','audio_file/WY_購貨_We.wav','audio_file/WY_足跡_We.wav','audio_file/WY_躲開_We.wav','audio_file/WY_輕生_We.wav'
 ]
     var E3 = ['audio_file/HM_世錫_NW.wav','audio_file/HM_交壓_NW.wav','audio_file/HM_任湧_NW.wav','audio_file/HM_伺異_NW.wav','audio_file/HM_來衣_NW.wav','audio_file/HM_保深_NW.wav','audio_file/HM_假制_NW.wav','audio_file/HM_傾共_NW.wav','audio_file/HM_光單_NW.wav','audio_file/HM_具勛_NW.wav','audio_file/HM_最算_NW.wav','audio_file/HM_協壞_NW.wav','audio_file/HM_告平_NW.wav','audio_file/HM_下降_Wa.wav','audio_file/HM_不只_Wa.wav','audio_file/HM_不堪_Wa.wav','audio_file/HM_佐證_Wa.wav','audio_file/HM_假牙_Wa.wav','audio_file/HM_剝去_Wa.wav','audio_file/HM_叫囂_Wa.wav','audio_file/HM_奪去_Wa.wav','audio_file/HM_富有_Wa.wav','audio_file/HM_帶子_Wa.wav','audio_file/HM_年紀_Wa.wav','audio_file/HM_打樁_Wa.wav','audio_file/HM_抹牆_Wa.wav','audio_file/HM_持筆_Wa.wav','audio_file/HM_提到_Wa.wav','audio_file/HM_改正_Wa.wav','audio_file/HM_更亮_Wa.wav','audio_file/HM_更加_Wa.wav','audio_file/HM_柔滑_Wa.wav','audio_file/HM_權力_Wa.wav','audio_file/HM_浮屍_Wa.wav','audio_file/HM_爆裂_Wa.wav','audio_file/HM_獻媚_Wa.wav','audio_file/HM_相公_Wa.wav','audio_file/HM_空話_Wa.wav','audio_file/HM_細微_Wa.wav','audio_file/HM_群毆_Wa.wav','audio_file/HM_肺葉_Wa.wav','audio_file/HM_苟合_Wa.wav','audio_file/HM_衙門_Wa.wav','audio_file/HM_誤闖_Wa.wav','audio_file/HM_走到_Wa.wav','audio_file/HM_輕巧_Wa.wav','audio_file/HM_轉折_Wa.wav','audio_file/HM_追逼_Wa.wav','audio_file/HM_逝者_Wa.wav','audio_file/HM_適齡_Wa.wav','audio_file/HM_郵購_Wa.wav','audio_file/HM_配角_Wa.wav','audio_file/HM_酒窩_Wa.wav','audio_file/HM_釋出_Wa.wav','audio_file/HM_鎖骨_Wa.wav','audio_file/HM_閒聊_Wa.wav','audio_file/HM_陰謀_Wa.wav','audio_file/HM_離去_Wa.wav','audio_file/HM_電子_Wa.wav','audio_file/HM_順道_Wa.wav','audio_file/HM_顧忌_Wa.wav','audio_file/HM_風紀_Wa.wav','audio_file/HM_餘地_Wa.wav','audio_file/HM_騙局_Wa.wav','audio_file/HM_高溫_Wa.wav','audio_file/HM_鬼臉_Wa.wav','audio_file/HM_魚骨_Wa.wav','audio_file/HM_黏著_Wa.wav','audio_file/JD_公親_NW.wav','audio_file/JD_實置_NW.wav','audio_file/JD_封疏_NW.wav','audio_file/JD_少道_NW.wav','audio_file/JD_峽料_NW.wav','audio_file/JD_工愛_NW.wav','audio_file/JD_幫蕩_NW.wav','audio_file/JD_度順_NW.wav','audio_file/JD_廉奏_NW.wav','audio_file/JD_弄特_NW.wav','audio_file/JD_弧代_NW.wav','audio_file/JD_形施_NW.wav','audio_file/JD_得被_NW.wav','audio_file/JD_忽同_NW.wav','audio_file/JD_下流_Wc.wav','audio_file/JD_中樞_Wc.wav','audio_file/JD_主宰_Wc.wav','audio_file/JD_主見_Wc.wav','audio_file/JD_值更_Wc.wav','audio_file/JD_剪裁_Wc.wav','audio_file/JD_受賄_Wc.wav','audio_file/JD_吃力_Wc.wav','audio_file/JD_奧秘_Wc.wav','audio_file/JD_小吃_Wc.wav','audio_file/JD_年長_Wc.wav','audio_file/JD_幸虧_Wc.wav','audio_file/JD_拋掉_Wc.wav','audio_file/JD_掃除_Wc.wav','audio_file/JD_提供_Wc.wav','audio_file/JD_據報_Wc.wav','audio_file/JD_日前_Wc.wav','audio_file/JD_棉條_Wc.wav','audio_file/JD_機警_Wc.wav','audio_file/JD_殘屑_Wc.wav','audio_file/JD_求偶_Wc.wav','audio_file/JD_添設_Wc.wav','audio_file/JD_現行_Wc.wav','audio_file/JD_監督_Wc.wav','audio_file/JD_神職_Wc.wav','audio_file/JD_箭桿_Wc.wav','audio_file/JD_終須_Wc.wav','audio_file/JD_聽課_Wc.wav','audio_file/JD_舒暢_Wc.wav','audio_file/JD_英畝_Wc.wav','audio_file/JD_袒露_Wc.wav','audio_file/JD_貨櫃_Wc.wav','audio_file/JD_踐踏_Wc.wav','audio_file/JD_輾平_Wc.wav','audio_file/JD_返工_Wc.wav','audio_file/JD_逆流_Wc.wav','audio_file/JD_遠去_Wc.wav','audio_file/JD_還口_Wc.wav','audio_file/JD_郵遞_Wc.wav','audio_file/JD_配樂_Wc.wav','audio_file/JD_醫道_Wc.wav','audio_file/JD_鍵入_Wc.wav','audio_file/JD_長裙_Wc.wav','audio_file/JD_閃過_Wc.wav','audio_file/JD_除夕_Wc.wav','audio_file/JD_雜貨_Wc.wav','audio_file/JD_難產_Wc.wav','audio_file/JD_雷暴_Wc.wav','audio_file/JD_鞋扣_Wc.wav','audio_file/JD_顛倒_Wc.wav','audio_file/JD_食品_Wc.wav','audio_file/JD_騎兵_Wc.wav','audio_file/JD_高僧_Wc.wav','audio_file/JD_高手_Wc.wav','audio_file/JD_麻醉_Wc.wav','audio_file/JD_龜裂_Wc.wav','audio_file/KS_怨援_NW.wav','audio_file/KS_悲殼_NW.wav','audio_file/KS_想風_NW.wav','audio_file/KS_慣團_NW.wav','audio_file/KS_成乾_NW.wav','audio_file/KS_房鹽_NW.wav','audio_file/KS_抽要_NW.wav','audio_file/KS_挖持_NW.wav','audio_file/KS_探汗_NW.wav','audio_file/KS_撤禪_NW.wav','audio_file/KS_擺字_NW.wav','audio_file/KS_旺姦_NW.wav','audio_file/KS_機諒_NW.wav','audio_file/KS_殺污_NW.wav','audio_file/KS_上陣_Wd.wav','audio_file/KS_下顎_Wd.wav','audio_file/KS_主次_Wd.wav','audio_file/KS_佩帶_Wd.wav','audio_file/KS_切口_Wd.wav','audio_file/KS_原藉_Wd.wav','audio_file/KS_壓痛_Wd.wav','audio_file/KS_天庭_Wd.wav','audio_file/KS_射擊_Wd.wav','audio_file/KS_展望_Wd.wav','audio_file/KS_常會_Wd.wav','audio_file/KS_打緊_Wd.wav','audio_file/KS_拋開_Wd.wav','audio_file/KS_按例_Wd.wav','audio_file/KS_搬運_Wd.wav','audio_file/KS_方針_Wd.wav','audio_file/KS_木造_Wd.wav','audio_file/KS_極刑_Wd.wav','audio_file/KS_步行_Wd.wav','audio_file/KS_毫升_Wd.wav','audio_file/KS_清醇_Wd.wav','audio_file/KS_減去_Wd.wav','audio_file/KS_王爺_Wd.wav','audio_file/KS_神學_Wd.wav','audio_file/KS_私利_Wd.wav','audio_file/KS_紅塵_Wd.wav','audio_file/KS_編班_Wd.wav','audio_file/KS_聯合_Wd.wav','audio_file/KS_良知_Wd.wav','audio_file/KS_落成_Wd.wav','audio_file/KS_訛奪_Wd.wav','audio_file/KS_賀宴_Wd.wav','audio_file/KS_輕佻_Wd.wav','audio_file/KS_轉移_Wd.wav','audio_file/KS_辭書_Wd.wav','audio_file/KS_送出_Wd.wav','audio_file/KS_連載_Wd.wav','audio_file/KS_遭殃_Wd.wav','audio_file/KS_鄉村_Wd.wav','audio_file/KS_酣醉_Wd.wav','audio_file/KS_野地_Wd.wav','audio_file/KS_野馬_Wd.wav','audio_file/KS_鏹水_Wd.wav','audio_file/KS_防守_Wd.wav','audio_file/KS_階層_Wd.wav','audio_file/KS_難倒_Wd.wav','audio_file/KS_青苗_Wd.wav','audio_file/KS_頒贈_Wd.wav','audio_file/KS_風箏_Wd.wav','audio_file/KS_飛鏢_Wd.wav','audio_file/KS_餞行_Wd.wav','audio_file/KS_驢子_Wd.wav','audio_file/KS_高潮_Wd.wav','audio_file/KS_魚竿_Wd.wav','audio_file/KS_鹹菜_Wd.wav','audio_file/KS_默記_Wd.wav','audio_file/PC_寬諂_NW.wav','audio_file/PC_民談_NW.wav','audio_file/PC_汽斡_NW.wav','audio_file/PC_法攜_NW.wav','audio_file/PC_浮慘_NW.wav','audio_file/PC_游役_NW.wav','audio_file/PC_潛同_NW.wav','audio_file/PC_為頭_NW.wav','audio_file/PC_煞管_NW.wav','audio_file/PC_燒撫_NW.wav','audio_file/PC_牛第_NW.wav','audio_file/PC_球目_NW.wav','audio_file/PC_膿然_NW.wav','audio_file/PC_薑格_NW.wav','audio_file/PC_上去_Wb.wav','audio_file/PC_上進_Wb.wav','audio_file/PC_不安_Wb.wav','audio_file/PC_不忿_Wb.wav','audio_file/PC_冷宮_Wb.wav','audio_file/PC_剷平_Wb.wav','audio_file/PC_圍牆_Wb.wav','audio_file/PC_大旱_Wb.wav','audio_file/PC_宿主_Wb.wav','audio_file/PC_實情_Wb.wav','audio_file/PC_差勁_Wb.wav','audio_file/PC_平方_Wb.wav','audio_file/PC_扭傷_Wb.wav','audio_file/PC_拉車_Wb.wav','audio_file/PC_探長_Wb.wav','audio_file/PC_接洽_Wb.wav','audio_file/PC_支幹_Wb.wav','audio_file/PC_有罪_Wb.wav','audio_file/PC_根基_Wb.wav','audio_file/PC_死亡_Wb.wav','audio_file/PC_法人_Wb.wav','audio_file/PC_滾熱_Wb.wav','audio_file/PC_理髮_Wb.wav','audio_file/PC_確實_Wb.wav','audio_file/PC_筆鋒_Wb.wav','audio_file/PC_米粒_Wb.wav','audio_file/PC_結構_Wb.wav','audio_file/PC_老弟_Wb.wav','audio_file/PC_舊稱_Wb.wav','audio_file/PC_落寞_Wb.wav','audio_file/PC_表兄_Wb.wav','audio_file/PC_財閥_Wb.wav','audio_file/PC_軀幹_Wb.wav','audio_file/PC_輪廓_Wb.wav','audio_file/PC_近作_Wb.wav','audio_file/PC_逃亡_Wb.wav','audio_file/PC_過剩_Wb.wav','audio_file/PC_過去_Wb.wav','audio_file/PC_過磅_Wb.wav','audio_file/PC_邁步_Wb.wav','audio_file/PC_鄰人_Wb.wav','audio_file/PC_醉鄉_Wb.wav','audio_file/PC_鋼筋_Wb.wav','audio_file/PC_門扇_Wb.wav','audio_file/PC_限量_Wb.wav','audio_file/PC_險勝_Wb.wav','audio_file/PC_離職_Wb.wav','audio_file/PC_雲層_Wb.wav','audio_file/PC_非禮_Wb.wav','audio_file/PC_頭版_Wb.wav','audio_file/PC_飛艇_Wb.wav','audio_file/PC_馬戲_Wb.wav','audio_file/PC_骨髓_Wb.wav','audio_file/PC_體力_Wb.wav','audio_file/PC_鹹肉_Wb.wav','audio_file/PC_鼻孔_Wb.wav','audio_file/WY_誕雲_NW.wav','audio_file/WY_豆連_NW.wav','audio_file/WY_長願_NW.wav','audio_file/WY_防化_NW.wav','audio_file/WY_陷初_NW.wav','audio_file/WY_離紅_NW.wav','audio_file/WY_霸床_NW.wav','audio_file/WY_革電_NW.wav','audio_file/WY_順股_NW.wav','audio_file/WY_顯讀_NW.wav','audio_file/WY_饌敲_NW.wav','audio_file/WY_騎憂_NW.wav','audio_file/WY_體割_NW.wav','audio_file/WY_鹹項_NW.wav','audio_file/WY_齡本_NW.wav','audio_file/WY_一切_We.wav','audio_file/WY_下品_We.wav','audio_file/WY_下游_We.wav','audio_file/WY_中文_We.wav','audio_file/WY_交稅_We.wav','audio_file/WY_凳子_We.wav','audio_file/WY_參考_We.wav','audio_file/WY_外力_We.wav','audio_file/WY_學童_We.wav','audio_file/WY_尊駕_We.wav','audio_file/WY_就近_We.wav','audio_file/WY_廉價_We.wav','audio_file/WY_打撈_We.wav','audio_file/WY_抹煞_We.wav','audio_file/WY_拮据_We.wav','audio_file/WY_提出_We.wav','audio_file/WY_放榜_We.wav','audio_file/WY_更改_We.wav','audio_file/WY_會考_We.wav','audio_file/WY_榮登_We.wav','audio_file/WY_油畫_We.wav','audio_file/WY_淤塞_We.wav','audio_file/WY_熱飲_We.wav','audio_file/WY_痛毆_We.wav','audio_file/WY_秋收_We.wav','audio_file/WY_純利_We.wav','audio_file/WY_罐子_We.wav','audio_file/WY_美言_We.wav','audio_file/WY_膽量_We.wav','audio_file/WY_華麗_We.wav','audio_file/WY_設施_We.wav','audio_file/WY_誘拐_We.wav','audio_file/WY_走勢_We.wav','audio_file/WY_輟演_We.wav','audio_file/WY_巡禮_We.wav','audio_file/WY_送到_We.wav','audio_file/WY_逃生_We.wav','audio_file/WY_遍及_We.wav','audio_file/WY_遺愛_We.wav','audio_file/WY_鄙人_We.wav','audio_file/WY_酸奶_We.wav','audio_file/WY_針灸_We.wav','audio_file/WY_長度_We.wav','audio_file/WY_長滿_We.wav','audio_file/WY_阿爸_We.wav','audio_file/WY_隔熱_We.wav','audio_file/WY_雪人_We.wav','audio_file/WY_靚女_We.wav','audio_file/WY_領款_We.wav','audio_file/WY_飄揚_We.wav','audio_file/WY_香艷_We.wav','audio_file/WY_馬褂_We.wav','audio_file/WY_骨頭_We.wav','audio_file/WY_鮮美_We.wav','audio_file/WY_點心_We.wav','audio_file/WY_鼻樑_We.wav'
 ]
-console.log(A1.length)
-console.log(A2.length)
-console.log(A3.length)
-console.log(B1.length)
-console.log(B2.length)
-console.log(B3.length)
-console.log(C1.length)
-console.log(C2.length)
-console.log(C3.length)
-console.log(D1.length)
-console.log(D2.length)
-console.log(D3.length)
-console.log(E1.length)
-console.log(E2.length)
-console.log(E3.length)
-
-//A3, B3, C3, D3, E3的長度是349，其餘為348
 
     var all_stimuli_lists = {
       "A1":A1, "A2":A2, "A3":A3, 
@@ -125,9 +106,9 @@ console.log(E3.length)
     var pool = jsPsych.data.getURLVariable('poolIs')
     var subpool = jsPsych.data.getURLVariable('subpoolIs')
     
-    /*var idnum = 3
-    var pool = "E"
-    var subpool = "E1"*/
+    /*var idnum = 6
+    var pool = "A"
+    var subpool = "A1"*/
 
 
 for (let i = 0; i < A1.length; i++) {
@@ -186,7 +167,7 @@ console.log(subpool)
 
 var practice_list 
 if (subpool === "A1"){ 
-  var practice_list = ['audio_file/HM_晚婚_We.wav','audio_file/JD_下品_We.wav','audio_file/KS_中文_We.wav','audio_file/PC_乳液_We.wav','audio_file/WY_交稅_We.wav','audio_file/HM_乳費_NW.wav','audio_file/JD_公親_NW.wav']
+  var practice_list = ['audio_file/HM_一切_We.wav','audio_file/JD_下品_We.wav','audio_file/KS_中文_We.wav','audio_file/PC_乳液_We.wav','audio_file/WY_交稅_We.wav','audio_file/HM_上子_NW.wav','audio_file/JD_公親_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_A1/");}
 
@@ -196,7 +177,7 @@ if (subpool === "A1"){
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_A2/");}
 
 } else if (subpool === "A3"){
-  var practice_list = ['audio_file/HM_停業_We.wav','audio_file/JD_元寶_We.wav','audio_file/KS_共度_We.wav','audio_file/PC_冰川_We.wav','audio_file/WY_凳子_We.wav','audio_file/HM_內失_NW.wav','audio_file/JD_審消_NW.wav']
+  var practice_list = ['audio_file/HM_停業_We.wav','audio_file/JD_元寶_We.wav','audio_file/KS_共度_We.wav','audio_file/PC_冰川_We.wav','audio_file/WY_凳子_We.wav','audio_file/HM_內失_NW.wav','audio_file/JD_弄特_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_A3/");}
 
@@ -207,19 +188,20 @@ else if (subpool === "B1"){
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_B1/");}
 
 }else if (subpool === "B2"){
-  var practice_list = ['audio_file/HM_今晨_Wa.wav','audio_file/JD_佐證_Wa.wav','audio_file/KS_保健_Wa.wav','audio_file/PC_假牙_Wa.wav','audio_file/WY_傷痕_Wa.wav','audio_file/KS_戰透_NW.wav','audio_file/PC_民談_NW.wav']
+  var practice_list = ['audio_file/HM_今晨_Wa.wav','audio_file/JD_佐證_Wa.wav','audio_file/KS_保健_Wa.wav','audio_file/PC_假牙_Wa.wav','audio_file/WY_傷痕_Wa.wav','audio_file/KS_戰透_NW.wav','audio_file/PC_深罷_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_B2/");}
 
 }else if (subpool === "B3"){ 
-  var practice_list = ['audio_file/HM_兌換_Wa.wav','audio_file/JD_冤屈_Wa.wav','audio_file/KS_凝望_Wa.wav','audio_file/PC_出訪_Wa.wav','audio_file/WY_分佈_Wa.wav','audio_file/KS_恥急_NW.wav','audio_file/PC_爭招_NW.wav']
+  var practice_list = ['audio_file/HM_兌換_Wa.wav','audio_file/PC_爭招_NW.wav','audio_file/JD_冤屈_Wa.wav','audio_file/KS_凝望_Wa.wav','audio_file/PC_出訪_Wa.wav','audio_file/WY_分佈_Wa.wav','audio_file/KS_撤禪_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_B3/");}
 
 }
 else if (subpool === "C1"){
   /*var practice_list = ['audio_file/HM_浠囦汉_Wc.wav']*/
-  var practice_list = ['audio_file/HM_串騙_Wb.wav','audio_file/JD_了結_Wb.wav','audio_file/KS_人群_Wb.wav','audio_file/PC_伏法_Wb.wav','audio_file/WY_族人_Wb.wav','audio_file/WY_誕雲_NW.wav','audio_file/HM_不師_NW.wav']
+  var practice_list = ['audio_file/HM_上子_NW.wav']
+  //var practice_list = ['audio_file/HM_串騙_Wb.wav','audio_file/JD_了結_Wb.wav','audio_file/KS_人群_Wb.wav','audio_file/PC_伏法_Wb.wav','audio_file/WY_使得_Wb.wav','audio_file/WY_誕雲_NW.wav','audio_file/HM_不師_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_C1/");}
 
@@ -228,7 +210,6 @@ else if (subpool === "C1"){
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_C2/");}
 
-  /*var practice_list = ['audio_file/外力_word.wav','audio_file/失身_word.wav','audio_file/巧合_word.wav','audio_file/困擾_fixed.wav']*/
 }else if (subpool === "C3"){  
   var practice_list = ['audio_file/HM_冷宮_Wb.wav','audio_file/JD_凹處_Wb.wav','audio_file/KS_列隊_Wb.wav','audio_file/PC_刪除_Wb.wav','audio_file/WY_剷平_Wb.wav','audio_file/WY_餘露_NW.wav','audio_file/HM_共袍_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
@@ -236,12 +217,12 @@ else if (subpool === "C1"){
 
 }
 else if (subpool === "D1"){  
-  var practice_list = ['audio_file/HM_二胡_Wc.wav','audio_file/JD_人數_Wc.wav','audio_file/KS_仇人_Wc.wav','audio_file/PC_暫別_Wc.wav','audio_file/WY_依傍_Wc.wav','audio_file/JD_官決_NW.wav','audio_file/KS_怨援_NW.wav']
+  var practice_list = ['audio_file/HM_二胡_Wc.wav','audio_file/JD_人數_Wc.wav','audio_file/KS_仇人_Wc.wav','audio_file/PC_伸冤_Wc.wav','audio_file/WY_依傍_Wc.wav','audio_file/JD_官決_NW.wav','audio_file/KS_怨援_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_D1/");}
 
 }else if (subpool === "D2"){  
-  var practice_list = ['audio_file/HM_修造_Wc.wav','audio_file/JD_值更_Wc.wav','audio_file/KS_傳說_Wc.wav','audio_file/PC_光束_Wc.wav','audio_file/WY_冒稱_Wc.wav','audio_file/JD_實置_NW.wav','audio_file/KS_想風_NW.wav']
+  var practice_list = ['audio_file/HM_修造_Wc.wav','audio_file/JD_值更_Wc.wav','audio_file/KS_傳說_Wc.wav','audio_file/PC_光束_Wc.wav','audio_file/WY_冒稱_Wc.wav','audio_file/JD_川停_NW.wav','audio_file/KS_戲是_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_D2/");}
 
@@ -252,7 +233,7 @@ else if (subpool === "D1"){
 
 }
 else if (subpool === "E1"){
-  var practice_list = ['audio_file/HM_丫頭_Wd.wav','audio_file/JD_他殺_Wd.wav','audio_file/KS_佩帶_Wd.wav','audio_file/PC_修煉_Wd.wav','audio_file/WY_僅見_Wd.wav','audio_file/PC_毫壁_NW.wav','audio_file/WY_謀姪_NW.wav']
+  var practice_list = ['audio_file/HM_丫頭_Wd.wav','audio_file/JD_他殺_Wd.wav','audio_file/KS_佩帶_Wd.wav','audio_file/PC_修煉_Wd.wav','audio_file/WY_僅見_Wd.wav','audio_file/PC_毒替_NW.wav','audio_file/WY_談形_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_E1/");}
 
@@ -262,7 +243,7 @@ else if (subpool === "E1"){
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_E2/");}
 
 }else if (subpool === "E3"){
-  var practice_list = ['audio_file/HM_原藉_Wd.wav','audio_file/JD_同樣_Wd.wav','audio_file/KS_周遭_Wd.wav','audio_file/PC_土產_Wd.wav','audio_file/WY_天庭_Wd.wav','audio_file/PC_片罪_NW.wav','audio_file/WY_院等_NW.wav']
+  var practice_list = ['audio_file/HM_原藉_Wd.wav','audio_file/JD_同樣_Wd.wav','audio_file/KS_周遭_Wd.wav','audio_file/PC_土產_Wd.wav','audio_file/WY_天庭_Wd.wav','audio_file/PC_片罪_NW.wav','audio_file/WY_饌敲_NW.wav']
   for (let i = 0; i < practice_list.length; i++) {
   practice_list[i] = practice_list[i].replace("audio_file/", "audio_file/Subpool_E3/");}
 
@@ -293,6 +274,7 @@ console.log(experiment_list)
 
 var i, j
 
+
 var exp_stim = []
 
 var prac_stim = []
@@ -311,7 +293,11 @@ console.log(prac_stim)
 
 
 
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 var preload_prac = {     
       type: jsPsychPreload,
@@ -330,6 +316,14 @@ var preload_prac = {
 		};
 		timeline.push(instruction_1);
 
+    var preload_test = {     
+      type: jsPsychPreload,
+      audio: experiment_list,
+      show_progress_bar: true,
+      show_detailed_errors: true
+    }
+    timeline.push(preload_test);
+
 
     var fullscreen_on = {
       type: jsPsychFullscreen,
@@ -337,6 +331,7 @@ var preload_prac = {
       fullscreen_mode: true
     } 
     timeline.push(fullscreen_on);
+
 
     var consent = {
       type: jsPsychSurveyMultiSelect,
@@ -350,7 +345,7 @@ var preload_prac = {
     }
   ]}
     timeline.push(consent)
-
+    
 
     var instruction_2 = {
       type: jsPsychHtmlButtonResponse,
@@ -361,7 +356,7 @@ var preload_prac = {
     <p>請用桌面上<span style="color: pink;"><b>觸控筆</b></span>在<span style="color: pink;"><b>電子手寫板</b></span>上盡快寫下您聽到的複合詞；若聽到的是<b>非複合詞</b>，您只需要在手寫板上標記‘x’即可繼續下一步。</p>
     <p>聽寫完畢後，您需要用鍵盤上的1至9表示您對聽寫此詞語的信心。</p>
     <p style="color: red;"><b>若對準確率<u>非常有信心</u>，請按下「9」鍵。</b></p>
-    <p style="color: red;"><b>若對準確率<u>非常沒有信心</u>，請按下「1」鍵。</b></p>
+    <p style="color: red;"><b>若對準確率<u>非常沒有自信</u>，請按下「1」鍵。</b></p>
     <p>當畫面完全載入後，下面的按鈕將會啟動。點擊它表示您已閱讀並明白以上說明。</p>
     <p><i><u><b>請在仔細閱讀以上說明然後繼續操作，並且確認您已經準備好！</b></u></i></p>
   `,
@@ -369,17 +364,7 @@ var preload_prac = {
 };
     timeline.push(instruction_2)
 
-    var preload_exp = {     
-      type: jsPsychPreload,
-      audio: experiment_list,
-      show_progress_bar: true,
-      show_detailed_errors: true
-    }
-    timeline.push(preload_exp);
-
-
-    
-
+  
 
     var instruction_3 = {
       type: jsPsychHtmlButtonResponse,
@@ -470,8 +455,8 @@ var writing_page = {
   type: jsPsychSketchpad,
   prompt: '<p>請寫下剛剛聽到的複合詞</u><br><p>若您聽到了非複合詞則直接畫一個‘x’。</u><br><p>完成按空格鍵繼續。</p>',
   prompt_location: 'abovecanvas',
-  canvas_width: 300,
-  canvas_height: 200,
+  canvas_width: 600,
+  canvas_height: 600,
   canvas_border_width: 2,
   show_clear_button: false,
   show_redo_button: false,
@@ -479,54 +464,54 @@ var writing_page = {
   show_finish_button: false,
   transparent_background: true,
   background_color: 'rgba(0,0,0,0)',
-  choices: " ",
-  //trial_duration: 5000, // Optional: still applies if no input, but no-input timeout takes precedence
-  on_finish: function(data) {
-    data.screen = "writing_page";
-    data.blocknum = blocknum;
-    data.trialnum = trialnum;
-    data.current_stimuli = current_stimuli;
-    data.trial_types = trial_types;
-    console.log("Trial ended with response:", data.response);
-  }
-};
+  choices:" ",
+    on_finish: function(data){
+        data.screen = "writing_page"
+        data.blocknum = blocknum
+        data.trialnum = trialnum
+        data.current_stimuli = current_stimuli
+        data.trial_types = trial_types
+      }
+}
+
+
+// 5. likert-scale rating page
+var rating_page = {
+      type: jsPsychHtmlKeyboardResponse,
+      stimulus: '按下鍵盤上的1至9來評定您對準確聽寫該複合詞率有多大信心',
+      choices: ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+      on_finish: function(data){
+        data.screen = "rating_page"
+        data.blocknum = blocknum 
+        data.trialnum = trialnum
+        data.trial_types = trial_types
+        data.current_stimuli = current_stimuli
+      }
+    }
+
+// 6. intertrial interval
+var interval = {
+      type: jsPsychHtmlKeyboardResponse,
+      stimulus: function(){
+        current_stimuli = jsPsych.timelineVariable("current_stimuli")
+        if (practice_list.includes(current_stimuli)){
+          return ('')
+        } else { 
+          return ('')
+        }
+      },
+      choices: "NO_KEYS",
+      trial_duration: 1250,
+      on_finish: function(data){
+        data.screen = "interval"
+        data.blocknum = blocknum 
+        data.trialnum = trialnum
+        data.current_stimuli = current_stimuli
+        data.trial_types = trial_types
+      }
+    }
 
   
- // 5. likert-scale rating page
- var rating_page = {
-       type: jsPsychHtmlKeyboardResponse,
-       stimulus: '按下鍵盤上的1至9來評定您對準確聽寫該複合詞率有多大信心',
-       choices: ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
-       on_finish: function(data){
-         data.screen = "rating_page"
-         data.blocknum = blocknum 
-         data.trialnum = trialnum
-         data.trial_types = trial_types
-         data.current_stimuli = current_stimuli
-       }
-     }
- 
- // 6. intertrial interval
- var interval = {
-       type: jsPsychHtmlKeyboardResponse,
-       stimulus: function(){
-         current_stimuli = jsPsych.timelineVariable("current_stimuli")
-         if (practice_list.includes(current_stimuli)){
-           return ('')
-         } else { 
-           return ('')
-         }
-       },
-       choices: "NO_KEYS",
-       trial_duration: 1250,
-       on_finish: function(data){
-         data.screen = "interval"
-         data.blocknum = blocknum 
-         data.trialnum = trialnum
-         data.current_stimuli = current_stimuli
-         data.trial_types = trial_types
-       }
-     }
 
     var rest = {
       type: jsPsychHtmlButtonResponse,
@@ -566,6 +551,14 @@ var writing_page = {
 
     timeline.push(practice_block)
 
+    /*var preload_4 = {     //necessecity to preload audio in batches?
+      type: jsPsychPreload,
+      audio: exp_fourth,
+      show_progress_bar: true,
+      show_detailed_errors: true
+    }
+    timeline.push(preload_4);*/
+
 
     var instruction_4 = {
       type: jsPsychHtmlButtonResponse,
@@ -579,6 +572,13 @@ var writing_page = {
     };
   timeline.push(instruction_4)
 
+  /*var preload_5 = {     //necessecity to preload audio in batches?
+      type: jsPsychPreload,
+      audio: exp_last,
+      show_progress_bar: true,
+      show_detailed_errors: true
+    }
+    timeline.push(preload_5);*/
 
   
 
